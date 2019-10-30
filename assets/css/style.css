@@ -1,3 +1,31 @@
 body{
-    background-color: peachpuff;
+    background-image: url(../external_files/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
+    background-repeat: repeat;
+    font-weight: bolder;
+}
+.sidenav,
+.nav-wrapper,
+.nav-extended,
+.nav-content{
+    background-color: hsla(0, 63%, 18%, 0.45);
+}
+.container{
+    width: 80vw;
+    margin: 15px auto;
+    padding: 15px;
+    border: 3px black solid;
+    overflow: auto;
+    background-color: rgba(45, 74, 160, 0.6);
+}
+.display-results{
+    padding: 20px;
+    margin: 10px;
+    color: white;
+}
+#pulled-info,
+#pulled-image,
+#pulled-link{
+    border: dotted black 1px;
+    padding: 10px;
+    margin: 20px;
 }
