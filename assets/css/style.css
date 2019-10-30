@@ -34,6 +34,11 @@ button{
     margin: 8px;
     background-color: thistle;
 }
+label,
 .list-ingredients{
     color: springgreen;
+}
+.health-issues{
+    padding: 15px;
+    margin: 10px;
 }

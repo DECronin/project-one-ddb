@@ -7,7 +7,8 @@ $(document).ready(function() {
     const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 
 
-
+    $('.dropdown-trigger').dropdown();
+    
     $('#recipe-search-btn').on('click', function () {
         event.preventDefault();
 
