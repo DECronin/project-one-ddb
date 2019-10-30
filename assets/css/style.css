@@ -29,3 +29,11 @@ body{
     padding: 10px;
     margin: 20px;
 }
+.checkbox,
+button{
+    margin: 8px;
+    background-color: thistle;
+}
+.list-ingredients{
+    color: springgreen;
+}

@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
     var ingredients = [];
-    $('.chips').chips(); // making 'chips' appear (line 24 of html input / retrieve data to add to list
+    var list = JSON.parse(localStorage.getItem("ingredientlist"));
     
     const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 
@@ -10,6 +10,8 @@ $(document).ready(function() {
 
     $('#recipe-search-btn').on('click', function () {
         event.preventDefault();
+
+        console.log(ingredients);
 
         // let search = $('.custom-class').val().trim();
         let search = 'apples';
@@ -41,5 +43,36 @@ $(document).ready(function() {
     })
     // &from=${start}&to=${finish}&mealType=${meal}${health}
 
+    function renderList(){
+        $('.list-ingredients').empty();
+        for (var i = 0; i < list.length; i++) {
+            var newItem = $("<p>");
+            newItem.text(list[i]);
+            var erase = $("<button>");
+            erase.attr("data-index", i);
+            erase.addClass("checkbox");
+            erase.text("X");
+            newItem = newItem.prepend(erase);
+            $(".list-ingredients").append(newItem);
+          }
+    };
+    $("#add-item").on("click", function(event) {
+        event.preventDefault();
+        var newItem = $("#input-list-item").val().trim();
+        list.push(newItem);
+        renderList(list);
+        localStorage.setItem("ingredientlist", JSON.stringify(list));
+        $("#input-list-item").val("");
+    });
+    $(document).on("click", ".checkbox", function() {
+        var ingredientNumber = $(this).attr("data-index");
+        list.splice(ingredientNumber, 1);
+        renderList(list);
+        localStorage.setItem("ingredientlist", JSON.stringify(list));
+    });
+    if (!Array.isArray(list)) {
+        list = [];
+    }
 
+    renderList();
 })
