@@ -33,6 +33,11 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function({hits}) {
+
+
+            
+            
+            // for loop to make this take each go through the hit array [0-9] create a card (or whatever)
             let list = hits[0].recipe
             let foodObject = {
                 title: list.label,
@@ -67,23 +72,31 @@ $(document).ready(function() {
             $(".list-ingredients").append(newItem);
           }
     };
+
     $("#add-item").on("click", function(event) {
         event.preventDefault();
         var newItem = $("#input-list-item").val().trim();
-        list.push(newItem);
-        renderList(list);
-        localStorage.setItem("ingredientlist", JSON.stringify(list));
-        $("#input-list-item").val("");
+
+        if (newItem !== '') {
+            list.push(newItem);
+            renderList(list);
+            localStorage.setItem("ingredientlist", JSON.stringify(list));
+            $("#input-list-item").val("");
+        } 
+
     });
+
     $(document).on("click", ".checkbox", function() {
         var ingredientNumber = $(this).attr("data-index");
         list.splice(ingredientNumber, 1);
         renderList(list);
         localStorage.setItem("ingredientlist", JSON.stringify(list));
     });
+    
     if (!Array.isArray(list)) {
         list = [];
     }
 
     renderList();
+    
 })
