@@ -12,8 +12,6 @@ $(document).ready(function() {
     $('#recipe-search-btn').on('click', function () {
         event.preventDefault();
 
-        console.log(ingredients);
-
         // let search = $('.custom-class').val().trim();
         let search = 'apples';
 
@@ -34,8 +32,20 @@ $(document).ready(function() {
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function(response) {
-            console.log(response)
+        }).then(function({hits}) {
+            let list = hits[0].recipe
+            let foodObject = {
+                title: list.label,
+                ingredientsArray: list.ingredients,
+                time: list.totalTime + " mins",
+                recipeLink: list.shareAs,
+                dietary: list.healthLabels,
+                calories: Math.floor(list.calories),
+
+            }
+
+            console.log(foodObject)
+
 
         })
 
