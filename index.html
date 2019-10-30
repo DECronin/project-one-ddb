@@ -52,6 +52,45 @@
                 </div>
                 <input id="input-list-item">
                 <button id="add-item">Add Ingredient</button>
+                <div class="health-issues">
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Allergies & Exclusions</a>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li><a href="#!">three</a></li>
+                        <!--We may need to change <a> here to something else but how do we want to retrieve this data?-->
+                    </ul>
+                </div>
+                <div class="meal-options">
+                        <label>Meal Type:</label>
+                    <form action="#">
+                        <p>
+                            <label>
+                            <input class="with-gap" name="group1" type="radio" />
+                            <span>Breakfast</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input class="with-gap" name="group1" type="radio" />
+                            <span>Lunch</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input class="with-gap" name="group1" type="radio"  />
+                            <span>Dinner</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input class="with-gap" name="group1" type="radio"/>
+                            <span>Snack</span>
+                            </label>
+                        </p>
+                        <!--What tags / data-retrieval would work best here?-->
+                    </form>
+                </div>
             </div>
             <button id="recipe-search-btn">Search</button>
             <div class="display-results">
