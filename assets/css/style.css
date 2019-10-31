@@ -1,7 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-image: url(../external_files/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
     background-repeat: repeat;
     font-weight: bolder;
+    padding: 20px;
 }
 .sidenav,
 .nav-wrapper,
@@ -14,8 +21,7 @@ body{
     margin: 15px auto;
     padding: 15px;
     border: 3px black solid;
-    overflow: auto;
-    background-color: rgba(45, 74, 160, 1);
+    background-color: rgba(45, 74, 160, .8);
 }
 .display-results{
     padding: 20px;
@@ -41,4 +47,51 @@ label,
 .health-issues{
     padding: 15px;
     margin: 10px;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right,
+        rgba(114, 2, 2, 0.8),
+        rgba(206, 79, 79, 0.8)),
+        url('../images/cooking-1.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+
+}
+
+.logo-display {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: black;
+    clip-path: circle(50% at 50% 50%);
+
+}
+
+.logo {
+    height: 70px;
+    filter: invert(100%);
+
+}
+
+.name-div {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.name {
+    text-shadow: 2px 2px 2px white;
+
+}
+
+.container {
+    position: relative;
+    top: -400px;
 }

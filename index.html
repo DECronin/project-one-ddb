@@ -16,8 +16,17 @@
 
     <body>
         
-        <header>
-            <nav class="nav-extended">
+        <header class='header'>
+
+            <div class='logo-display'>
+                <img src='assets/images/pot.png' alt='logo' class='logo' />
+            </div>
+
+            <div class='name-div'>
+                <h1 class='name'>Empty Kitchen</h1>
+            </div>
+
+            <!-- <nav class="nav-extended">
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo">Empty Kitchen</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -28,63 +37,32 @@
                         <li class="tab"><a href="./favorites.html">Favorites</a></li>
                     </ul>
                 </div>
-                <div class="nav-content">
-                    <ul class="tabs tabs-transparent">
-                        <li class="tab"><a class="active" href="./index.html">Search</a></li>
-                        <li class="tab"><a href="./videos.html">Videos</a></li>
-                        <li class="tab"><a href="./about.html">About</a></li>
-                        <li class="tab"><a href="./favorites.html">Favorites</a></li>
-                    </ul>
-                </div>
-            </nav>
+            </nav> -->
 
         </header>
+        
         <div class="container" id="search-recipes">
             <div class="list-box">
                 <label>Ingredients:</label>
+
                 <div class="list-ingredients">
                 </div>
-                <input class='list-input' id="input-list-item">
+
+                <input class='list-input' placeholder="What's in your Kitchen?" id="input-list-item">
                 <button class='list-input' id="add-item">Add Ingredient</button>
                 <div class="health-issues input-field col s12">
                     <select multiple>
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="" disabled selected>Dietary Restrictions</option>
+                        <option value="low-sugar">Sugar Free</option>
+                        <option value="peanut-free">Peanut Free</option>
+                        <option value="vegetarian">Meat Free</option>
+                        <option value="dairy-free">Dairy Free</option>
+                        <option value="gluten-free">Gluten Free</option>
+                        <option value="fish-free">Fish Free</option>
                     </select>
                     <label>Allergies & Exclusions</label>
-            </div>
-                <div class="meal-options">
-                        <label>Meal Type:</label>
-                    <form action="#">
-                        <p>
-                            <label>
-                            <input class="with-gap" name="group1" type="radio" />
-                            <span>Breakfast</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                            <input class="with-gap" name="group1" type="radio" />
-                            <span>Lunch</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                            <input class="with-gap" name="group1" type="radio"  />
-                            <span>Dinner</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                            <input class="with-gap" name="group1" type="radio"/>
-                            <span>Snack</span>
-                            </label>
-                        </p>
-                        <!--What tags / data-retrieval would work best here?-->
-                    </form>
                 </div>
+                
             </div>
             
             <button id="recipe-search-btn">Search</button>
