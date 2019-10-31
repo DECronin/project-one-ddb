@@ -1,10 +1,6 @@
 $(document).ready(function() {
 
     var list = JSON.parse(localStorage.getItem("ingredientlist"));
-    
-    const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
-    var ytURL = 'https://www.googleapis.com/youtube/v3';
-
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
     
