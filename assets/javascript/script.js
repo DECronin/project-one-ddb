@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    var list = JSON.parse(localStorage.getItem("ingredientlist"));
+    let list = JSON.parse(localStorage.getItem("ingredientlist"));
+
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
     
@@ -10,20 +11,34 @@ $(document).ready(function() {
         // let search = $('.custom-class').val().trim();
         let search = 'apples';
 
+        let ing1 = $('.ing-0').attr('data-name')
+        let ing2 = $('.ing-1').attr('data-name')
+        let ing3 = $('.ing-2').attr('data-name')
+
+        // put these vars into url string, default is apples...
+        console.log(`${ing1} + ${ing2} + ${ing3}`)
+
+        list = [];
+        localStorage.setItem("ingredientlist", JSON.stringify(list));
+        $('.list-ingredients').empty();
+        $('.list-input').css('display', 'block')
+
         let key = '8a8f706f4ed29bc722aca293b277b0dc';
         let keyId = '022a7211';
 
         //create radio buttons for meal type {lunch, dinner, breakfast, snack}
-        let meal = 'Breakfast'
+        let meal = 'breakfast' //- can't get it to work
 
         let health = `&health=tree-nut-free`
 
         let start = 0;
         let finish = start + 10;
 
-        //shows the first five results (change code so that we can change it based on page)
-        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}&mealType=${meal}`
-        // 
+        // pull in data from health stuff... also reset that field  they are set as values
+
+        // shows the first five results (change code so that we can change it based on page)
+        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}`
+        // &mealType=${meal}
 
         $.ajax({
             url: foodURL,
@@ -58,10 +73,12 @@ $(document).ready(function() {
 
     function renderList(){
         $('.list-ingredients').empty();
-        for (var i = 0; i < list.length; i++) {
-            var newItem = $("<p>");
+        for (let i = 0; i < list.length; i++) {
+            let newItem = $("<p>");
+            newItem.attr('data-name', list[i])
+            newItem.addClass(`ing-${i}`)
             newItem.text(list[i]);
-            var erase = $("<button>");
+            let erase = $("<button>");
             erase.attr("data-index", i);
             erase.addClass("checkbox");
             erase.text("X");
@@ -77,7 +94,7 @@ $(document).ready(function() {
 
     $("#add-item").on("click", function(event) {
         event.preventDefault();
-        var newItem = $("#input-list-item").val().trim();
+        let newItem = $("#input-list-item").val().trim();
 
         if (newItem !== '') {
             list.push(newItem);
@@ -89,7 +106,7 @@ $(document).ready(function() {
     });
 
     $(document).on("click", ".checkbox", function() {
-        var ingredientNumber = $(this).attr("data-index");
+        let ingredientNumber = $(this).attr("data-index");
         list.splice(ingredientNumber, 1);
         renderList(list);
         localStorage.setItem("ingredientlist", JSON.stringify(list));
