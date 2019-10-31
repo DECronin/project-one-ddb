@@ -79,12 +79,22 @@ label,
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-transform: uppercase;
 
 }
 
 .name {
     text-shadow: 2px 2px 2px white;
+    display: block;
 
+}
+
+.name-sub {
+    display: block;
+    text-shadow: 1px 1px 1px white;
+    font-size: 20px;
+    font-weight: 400;
+    
 }
 
 .container {
