@@ -7,6 +7,7 @@
 
         <title>Project 1</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel='icon' href='' />
@@ -47,7 +48,7 @@
         
         <div class="container" id="search-recipes">
             <div class="list-box">
-                <label>Ingredients:</label>
+                <h4>Ingredients:</h4>
 
                 <div class="list-ingredients">
                 </div>
@@ -55,7 +56,8 @@
                 <input class='list-input' placeholder="What's in your Kitchen?" id="input-list-item">
                 <button class='list-input' id="add-item">Add Ingredient</button>
                 <div class="health-issues input-field col s12 ">
-                    <select multiple>
+                    <h4>Allergies & Exclusions:</h4>
+                    <select class='selectors' multiple>
                         <option value="" disabled selected>Dietary Restrictions</option>
                         <option value="low-sugar">Sugar Free</option>
                         <option value="peanut-free">Peanut Free</option>
@@ -64,7 +66,7 @@
                         <option value="gluten-free">Gluten Free</option>
                         <option value="fish-free">Fish Free</option>
                     </select>
-                    <label>Allergies & Exclusions</label>
+                    
                 </div>
                 
             </div>

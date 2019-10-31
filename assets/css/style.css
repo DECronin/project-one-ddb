@@ -9,6 +9,7 @@ body{
     background-repeat: repeat;
     font-weight: bolder;
     padding: 20px;
+    font-family: 'Rubik', sans-serif;
 }
 .sidenav,
 .nav-wrapper,
@@ -21,7 +22,7 @@ body{
     margin: 15px auto;
     padding: 15px;
     border: 3px black solid;
-    background-color: rgba(45, 74, 160, .8);
+    background-color: rgba(54, 88, 190, 0.8);
 }
 .display-results{
     padding: 20px;
@@ -38,11 +39,25 @@ body{
 .checkbox,
 button{
     padding: 5px;
-    background-color: thistle;
+    background-color: white;
+    margin: 5px 5px 5px 0;
+
+}
+button:hover {
+    color: white;
+    background-color: black;
+}
+button:visited {
+    color: black;
+    background-color: white;
+}
+button:active {
+    color: black;
+    background-color: white;
 }
 label,
 .list-ingredients{
-    color: springgreen;
+    color: black;
 }
 
 .header {
@@ -81,11 +96,15 @@ label,
     transform: translate(-50%, -50%);
     text-transform: uppercase;
 
+    backface-visibility: hidden;
+
 }
 
 .name {
     text-shadow: 2px 2px 2px white;
     display: block;
+    text-align: center;
+    animation: moveDownLeft 2s;
 
 }
 
@@ -94,10 +113,38 @@ label,
     text-shadow: 1px 1px 1px white;
     font-size: 20px;
     font-weight: 400;
+    text-align: center;
+    animation: moveDownRight 2s;
     
 }
 
 .container {
     position: relative;
     top: -400px;
+}
+h4 {
+    text-shadow: 1px 1px 1px white;
+    font-style: italic;
+}
+
+@keyframes moveDownLeft {
+    0%{
+        opacity: 0;
+        transform: translate(-300px, -200px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes moveDownRight {
+    0%{
+        opacity: 0;
+        transform: translate(300px, 200px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
 }
