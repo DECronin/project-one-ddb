@@ -17,7 +17,7 @@ $(document).ready(function() {
         let keyId = '022a7211';
 
         //create radio buttons for meal type {lunch, dinner, breakfast, snack}
-        let meal = 'Breakfast'
+        let meal = 'breakfast' //- can't get it to work
 
         let health = `&health=tree-nut-free`
 
@@ -25,8 +25,8 @@ $(document).ready(function() {
         let finish = start + 10;
 
         //shows the first five results (change code so that we can change it based on page)
-        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}&mealType=${meal}`
-        // 
+        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}`
+        // &mealType=${meal}
 
         $.ajax({
             url: foodURL,
