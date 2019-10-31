@@ -19,7 +19,7 @@
         <header>
             <nav class="nav-extended">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Logo</a>
+                    <a href="#" class="brand-logo">Empty Kitchen</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li class="tab"><a class="active" href="./index.html">Search</a></li>
@@ -37,13 +37,6 @@
                     </ul>
                 </div>
             </nav>
-            
-            <ul class="sidenav" id="mobile-demo">
-                <li class="tab"><a class="active" href="./index.html">Search</a></li>
-                <li class="tab"><a href="./videos.html">Videos</a></li>
-                <li class="tab"><a href="./about.html">About</a></li>
-                <li class="tab"><a href="./favorites.html">Favorites</a></li>
-            </ul>
 
         </header>
         <div class="container" id="search-recipes">
@@ -53,15 +46,15 @@
                 </div>
                 <input class='list-input' id="input-list-item">
                 <button class='list-input' id="add-item">Add Ingredient</button>
-                <div class="health-issues">
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Allergies & Exclusions</a>
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li><a href="#!">three</a></li>
-                        <!--We may need to change <a> here to something else but how do we want to retrieve this data?-->
-                    </ul>
-                </div>
+                <div class="health-issues input-field col s12">
+                    <select multiple>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Allergies & Exclusions</label>
+            </div>
                 <div class="meal-options">
                         <label>Meal Type:</label>
                     <form action="#">
@@ -93,6 +86,7 @@
                     </form>
                 </div>
             </div>
+            
             <button id="recipe-search-btn">Search</button>
             <div class="display-results">
                 <span id="pulled-info">Info</span>
