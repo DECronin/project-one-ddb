@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-    var ingredients = [];
     var list = JSON.parse(localStorage.getItem("ingredientlist"));
     
     const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
@@ -19,45 +17,47 @@ $(document).ready(function() {
         let keyId = '022a7211';
 
         //create radio buttons for meal type {lunch, dinner, breakfast, snack}
-        let meal = 'dinner'
+        let meal = 'Breakfast'
 
         let health = `&health=tree-nut-free`
 
         let start = 0;
-        let finish = start + 5;
+        let finish = start + 10;
 
         //shows the first five results (change code so that we can change it based on page)
-        let queryURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}`
+        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}&mealType=${meal}`
+        // 
 
         $.ajax({
-            url: queryURL,
+            url: foodURL,
             method: "GET"
         }).then(function({hits}) {
-
-
-            
             
             // for loop to make this take each go through the hit array [0-9] create a card (or whatever)
-            let list = hits[0].recipe
-            let foodObject = {
-                title: list.label,
-                ingredientsArray: list.ingredients,
-                time: list.totalTime + " mins",
-                recipeLink: list.shareAs,
-                dietary: list.healthLabels,
-                calories: Math.floor(list.calories),
+            for (let i = 0; i < hits.length; i++) {
 
+                let list = hits[i].recipe
+                
+                let foodObject = {
+                    title: list.label,
+                    ingredientsArray: list.ingredients,
+                    time: list.totalTime + " mins",
+                    recipeLink: list.shareAs,
+                    dietary: list.healthLabels,
+                    calories: Math.floor(list.calories),
+
+                }
+
+                // create div for each object
+                console.log(foodObject)
             }
-
-            console.log(foodObject)
-
 
         })
 
 
 
     })
-    // &from=${start}&to=${finish}&mealType=${meal}${health}
+    
 
     function renderList(){
         $('.list-ingredients').empty();
@@ -70,7 +70,12 @@ $(document).ready(function() {
             erase.text("X");
             newItem = newItem.prepend(erase);
             $(".list-ingredients").append(newItem);
-          }
+        }
+        if (list.length >= 3) {
+            $('.list-input').css('display', 'none')
+        } else {
+            $('.list-input').css('display', 'block')
+        }
     };
 
     $("#add-item").on("click", function(event) {
@@ -92,7 +97,7 @@ $(document).ready(function() {
         renderList(list);
         localStorage.setItem("ingredientlist", JSON.stringify(list));
     });
-    
+
     if (!Array.isArray(list)) {
         list = [];
     }
