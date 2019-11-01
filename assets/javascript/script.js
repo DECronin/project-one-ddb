@@ -14,6 +14,10 @@ $(document).ready(function() {
         let ing1 = $('.ing-0').attr('data-name')
         let ing2 = $('.ing-1').attr('data-name')
         let ing3 = $('.ing-2').attr('data-name')
+        let ing4 = $('.ing-3').attr('data-name')
+        let ing5 = $('.ing-4').attr('data-name')
+
+        // apples,+flour,+sugar
 
         if (ing1) {
             search = ing1
@@ -29,64 +33,41 @@ $(document).ready(function() {
             search += `&foodId=${ing3}`
         }
 
+        if (ing4) {
+            search += `&foodId=${ing4}`
+        }
+
+        if (ing5) {
+            search += `&foodId=${ing5}`
+        }
+
+        // let ignoreList;
+
+
+
         list = [];
         localStorage.setItem("ingredientlist", JSON.stringify(list));
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-        let key = '8a8f706f4ed29bc722aca293b277b0dc';
-        let keyId = '022a7211';
 
-        //create radio buttons for meal type {lunch, dinner, breakfast, snack}
-        //let meal = 'breakfast' //- can't get it to work
 
-        let healthArray = $('.selectors').val()
-        let health = ''
-        $('.selectors').val('')
-
-        for (let i = 0; i < healthArray.length; i++) {
-            health += `&Health=${healthArray[i]}`
-        }
-
-        console.log(health)
-
-        let start = 0;
-        let finish = start + 10;
-
-        // pull in data from health stuff... also reset that field  they are set as values
-
-        // shows the first five results (change code so that we can change it based on page)
-        let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}`
-        // &mealType=${meal}
+        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true`
 
         console.log(foodURL)
 
         $.ajax({
             url: foodURL,
             method: "GET"
-        }).then(function({hits}) {
-            
-            // for loop to make this take each go through the hit array [0-9] create a card (or whatever)
-            for (let i = 0; i < hits.length; i++) {
-
-                let list = hits[i].recipe
-                
-                let foodObject = {
-                    title: list.label,
-                    ingredientsArray: list.ingredients,
-                    time: list.totalTime + " mins",
-                    recipeLink: list.shareAs,
-                    dietary: list.healthLabels,
-                    calories: Math.floor(list.calories),
-
-                }
-
-                // create div for each object
-                console.log(foodObject)
-            }
+        }).then(function(response) {
+            console.log(response)
 
         })
 
+        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,+flour,+sugar&ranking=1&limitLicense=true
+        // api key ?apiKey=6249e69ea0314b028cff85490334f327&
+        // link for ingredients `https://api.spoonacular.com/recipes/${recipeId}/ingredientWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
+        // link to get the recipe instructions `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
 
 
     })
