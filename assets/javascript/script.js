@@ -15,8 +15,19 @@ $(document).ready(function() {
         let ing2 = $('.ing-1').attr('data-name')
         let ing3 = $('.ing-2').attr('data-name')
 
-        // put these vars into url string, default is apples...
-        console.log(`${ing1} + ${ing2} + ${ing3}`)
+        if (ing1) {
+            search = ing1
+        } else {
+            return
+        }
+
+        if (ing2) {
+            search += `&foodId=${ing2}`
+        }
+
+        if (ing3) {
+            search += `&foodId=${ing3}`
+        }
 
         list = [];
         localStorage.setItem("ingredientlist", JSON.stringify(list));
@@ -27,9 +38,17 @@ $(document).ready(function() {
         let keyId = '022a7211';
 
         //create radio buttons for meal type {lunch, dinner, breakfast, snack}
-        let meal = 'breakfast' //- can't get it to work
+        //let meal = 'breakfast' //- can't get it to work
 
-        let health = `&health=tree-nut-free`
+        let healthArray = $('.selectors').val()
+        let health = ''
+        $('.selectors').val('')
+
+        for (let i = 0; i < healthArray.length; i++) {
+            health += `&Health=${healthArray[i]}`
+        }
+
+        console.log(health)
 
         let start = 0;
         let finish = start + 10;
@@ -39,6 +58,8 @@ $(document).ready(function() {
         // shows the first five results (change code so that we can change it based on page)
         let foodURL = `https://api.edamam.com/search?q=${search}&app_id=${keyId}&app_key=${key}&from=${start}&to=${finish}${health}`
         // &mealType=${meal}
+
+        console.log(foodURL)
 
         $.ajax({
             url: foodURL,
