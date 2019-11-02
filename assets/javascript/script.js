@@ -1,3 +1,6 @@
+// To Do:
+// fix inputs so that spaces are removed properly
+
 $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
@@ -16,8 +19,9 @@ $(document).ready(function() {
         let ing3 = $('.ing-2').attr('data-name')
         let ing4 = $('.ing-3').attr('data-name')
         let ing5 = $('.ing-4').attr('data-name')
+        let ing6 = $('.ing-5').attr('data-name')
 
-        // apples,+flour,+sugar
+        // apples,flour,sugar
 
         if (ing1) {
             search = ing1
@@ -26,23 +30,24 @@ $(document).ready(function() {
         }
 
         if (ing2) {
-            search += `&foodId=${ing2}`
+            search += `,${ing2}`
         }
 
         if (ing3) {
-            search += `&foodId=${ing3}`
+            search += `,${ing3}`
         }
 
         if (ing4) {
-            search += `&foodId=${ing4}`
+            search += `,${ing4}`
         }
 
         if (ing5) {
-            search += `&foodId=${ing5}`
+            search += `,${ing5}`
         }
 
-        // let ignoreList;
-
+        if (ing6) {
+            search += `,${ing6}`
+        }
 
 
         list = [];
@@ -50,21 +55,40 @@ $(document).ready(function() {
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-
-
         let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true`
-
-        console.log(foodURL)
+        
+        
 
         $.ajax({
             url: foodURL,
             method: "GET"
         }).then(function(response) {
-            console.log(response)
+            
+            for(let i = 0; i < response.length; i++) {
+                let food = response[i]
+                let ingredients = []
+                let recipeId = food.
+
+
+
+                let foodObject = {
+                    title: food.title,
+                    image: food.image,
+                    ingredients,
+
+                }
+                
+
+
+
+                //display this into a div
+
+            }
+
 
         })
 
-        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,+flour,+sugar&ranking=1&limitLicense=true
+        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,flour,sugar&ranking=1&limitLicense=true
         // api key ?apiKey=6249e69ea0314b028cff85490334f327&
         // link for ingredients `https://api.spoonacular.com/recipes/${recipeId}/ingredientWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
         // link to get the recipe instructions `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
@@ -87,7 +111,7 @@ $(document).ready(function() {
             newItem = newItem.prepend(erase);
             $(".list-ingredients").append(newItem);
         }
-        if (list.length >= 3) {
+        if (list.length >= 6) {
             $('.list-input').css('display', 'none')
         } else {
             $('.list-input').css('display', 'block')
