@@ -8,41 +8,52 @@ $(document).ready(function() {
     $('#recipe-search-btn').on('click', function () {
         event.preventDefault();
 
-        // let search = $('.custom-class').val().trim();
         let search = 'apples';
 
-        let ing1 = $('.ing-0').attr('data-name')
-        let ing2 = $('.ing-1').attr('data-name')
-        let ing3 = $('.ing-2').attr('data-name')
-        let ing4 = $('.ing-3').attr('data-name')
-        let ing5 = $('.ing-4').attr('data-name')
-
-        // apples,+flour,+sugar
+        let ing1 = $('.ing-0').attr('data-name');
+        let ing2 = $('.ing-1').attr('data-name');
+        let ing3 = $('.ing-2').attr('data-name');
+        let ing4 = $('.ing-3').attr('data-name');
+        let ing5 = $('.ing-4').attr('data-name');
+        let ing6 = $('.ing-5').attr('data-name');
 
         if (ing1) {
+            ing1 = ing1.toLowerCase();
+            ing1 = ing1.split(' ').join('+')
             search = ing1
         } else {
             return
         }
 
         if (ing2) {
-            search += `&foodId=${ing2}`
+            ing2 = ing2.toLowerCase();
+            ing2 = ing2.split(' ').join('+')
+            search += `,${ing2}`
         }
 
         if (ing3) {
-            search += `&foodId=${ing3}`
+            ing3 = ing3.toLowerCase();
+            ing3 = ing3.split(' ').join('+')
+            search += `,${ing3}`
         }
 
         if (ing4) {
-            search += `&foodId=${ing4}`
+            ing4 = ing4.toLowerCase();
+            ing4 = ing4.split(' ').join('+')
+            search += `,${ing4}`
         }
 
         if (ing5) {
-            search += `&foodId=${ing5}`
+            ing5 = ing5.toLowerCase();
+            ing5 = ing5.split(' ').join('+')
+            search += `,${ing5}`
         }
 
-        // let ignoreList;
-
+        if (ing6) {
+            ing6 = ing6.toLowerCase();
+            ing6 = ing6.split(' ').join('+')
+            search += `,${ing6}`
+        }
 
 
         list = [];
@@ -50,21 +61,60 @@ $(document).ready(function() {
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-
-
         let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true`
-
+        
         console.log(foodURL)
 
         $.ajax({
             url: foodURL,
             method: "GET"
         }).then(function(response) {
-            console.log(response)
+            
+            for(let i = 0; i < response.length; i++) {
+                let food = response[i]
+                let ingredients = []
+
+                for (let i = 0; i < food.missedIngredients.length; i++) {
+                    ingredients.push(food.missedIngredients[i].original)
+                }
+
+                for (let i = 0; i < food.usedIngredients.length; i++) {
+                    ingredients.push(food.usedIngredients[i].original)
+                }
+
+                let foodObject = {
+                    title: food.title,
+                    image: food.image,
+                    ingredients,
+                    recipeId: food.id,
+
+                }
+
+                console.log(foodObject)
+
+                // recipeId = foodObject.recipeId
+
+                // let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+
+                // $.ajax({
+                //     url: recipeURL,
+                //     method: "GET"
+                // }).then(function(response) {
+                //     console.log(response)
+                // })
+
+                //console.log(foodObject)
+                //make button with a data = to recipe id!!!  ---- add that to the div and the recipe section as well
+                //display this into a div 
+
+            }
+
+                
+
 
         })
 
-        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,+flour,+sugar&ranking=1&limitLicense=true
+        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,flour,sugar&ranking=1&limitLicense=true
         // api key ?apiKey=6249e69ea0314b028cff85490334f327&
         // link for ingredients `https://api.spoonacular.com/recipes/${recipeId}/ingredientWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
         // link to get the recipe instructions `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
@@ -87,7 +137,7 @@ $(document).ready(function() {
             newItem = newItem.prepend(erase);
             $(".list-ingredients").append(newItem);
         }
-        if (list.length >= 3) {
+        if (list.length >= 6) {
             $('.list-input').css('display', 'none')
         } else {
             $('.list-input').css('display', 'block')
@@ -121,3 +171,23 @@ $(document).ready(function() {
     renderList();
     
 })
+
+
+//info for recipe ajax call
+
+// let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+            
+//make button for ajax call
+
+// let recipeId = 646317
+           
+// $.ajax({
+//     url: recipeURL,
+//     method: "GET"
+// }).then(function(response))
+//      console.log(response)
+//     }
+
+//
+
+// https://api.spoonacular.com/recipes/656738/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327
