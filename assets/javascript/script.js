@@ -1,6 +1,3 @@
-// To Do:
-// fix inputs so that spaces are removed properly
-
 $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
@@ -11,41 +8,50 @@ $(document).ready(function() {
     $('#recipe-search-btn').on('click', function () {
         event.preventDefault();
 
-        // let search = $('.custom-class').val().trim();
         let search = 'apples';
 
-        let ing1 = $('.ing-0').attr('data-name')
-        let ing2 = $('.ing-1').attr('data-name')
-        let ing3 = $('.ing-2').attr('data-name')
-        let ing4 = $('.ing-3').attr('data-name')
-        let ing5 = $('.ing-4').attr('data-name')
-        let ing6 = $('.ing-5').attr('data-name')
-
-        // apples,flour,sugar
+        let ing1 = $('.ing-0').attr('data-name');
+        let ing2 = $('.ing-1').attr('data-name');
+        let ing3 = $('.ing-2').attr('data-name');
+        let ing4 = $('.ing-3').attr('data-name');
+        let ing5 = $('.ing-4').attr('data-name');
+        let ing6 = $('.ing-5').attr('data-name');
 
         if (ing1) {
+            ing1 = ing1.toLowerCase();
+            ing1 = ing1.split(' ').join('+')
             search = ing1
         } else {
             return
         }
 
         if (ing2) {
+            ing2 = ing2.toLowerCase();
+            ing2 = ing2.split(' ').join('+')
             search += `,${ing2}`
         }
 
         if (ing3) {
+            ing3 = ing3.toLowerCase();
+            ing3 = ing3.split(' ').join('+')
             search += `,${ing3}`
         }
 
         if (ing4) {
+            ing4 = ing4.toLowerCase();
+            ing4 = ing4.split(' ').join('+')
             search += `,${ing4}`
         }
 
         if (ing5) {
+            ing5 = ing5.toLowerCase();
+            ing5 = ing5.split(' ').join('+')
             search += `,${ing5}`
         }
 
         if (ing6) {
+            ing6 = ing6.toLowerCase();
+            ing6 = ing6.split(' ').join('+')
             search += `,${ing6}`
         }
 
@@ -57,7 +63,7 @@ $(document).ready(function() {
 
         let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true`
         
-        
+        console.log(foodURL)
 
         $.ajax({
             url: foodURL,
@@ -67,23 +73,43 @@ $(document).ready(function() {
             for(let i = 0; i < response.length; i++) {
                 let food = response[i]
                 let ingredients = []
-                let recipeId = food.
 
+                for (let i = 0; i < food.missedIngredients.length; i++) {
+                    ingredients.push(food.missedIngredients[i].original)
+                }
 
+                for (let i = 0; i < food.usedIngredients.length; i++) {
+                    ingredients.push(food.usedIngredients[i].original)
+                }
 
                 let foodObject = {
                     title: food.title,
                     image: food.image,
                     ingredients,
+                    recipeId: food.id,
 
                 }
-                
 
+                console.log(foodObject)
 
+                // recipeId = foodObject.recipeId
 
-                //display this into a div
+                // let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+
+                // $.ajax({
+                //     url: recipeURL,
+                //     method: "GET"
+                // }).then(function(response) {
+                //     console.log(response)
+                // })
+
+                //console.log(foodObject)
+                //make button with a data = to recipe id!!!  ---- add that to the div and the recipe section as well
+                //display this into a div 
 
             }
+
+                
 
 
         })
@@ -145,3 +171,23 @@ $(document).ready(function() {
     renderList();
     
 })
+
+
+//info for recipe ajax call
+
+// let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+            
+//make button for ajax call
+
+// let recipeId = 646317
+           
+// $.ajax({
+//     url: recipeURL,
+//     method: "GET"
+// }).then(function(response))
+//      console.log(response)
+//     }
+
+//
+
+// https://api.spoonacular.com/recipes/656738/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327
