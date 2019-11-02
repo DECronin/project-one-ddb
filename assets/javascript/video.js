@@ -9,7 +9,7 @@ function getVideo() {
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
           key: youtubeKey,
-          q: input,
+          q: input, // + 'cooking' or category : food;
           part: 'snippet',
           maxResults: 10,
           type: 'video',
