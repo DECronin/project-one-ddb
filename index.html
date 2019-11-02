@@ -24,17 +24,19 @@
             </div>
 
             <div class='name-div'>
-                <h1>
+                <h1 class='name-line'>
                     <span class='name'>Empty Kitchen</span>
                     <span class='name-sub'>What can you cook with what you've got?</span>
                 </h1>
+
+                <button data-target="modal1" class="btn-modal modal-trigger">What's in Your Kitchen?</button>
                 
             </div>
             <nav class='navbar'>
                 <ul>
-                    <li class="nav-items"><a href="./index.html">Search</a></li>
-                    <li class="nav-items"><a href="./videos.html">Videos</a></li>
                     <li class="nav-items"><a href="./contact.html">Contact</a></li>
+                    <li class="nav-items"><a href="./videos.html">Videos</a></li>
+                    <li class="nav-items"><a href="./index.html">Search</a></li>
                     <!-- <li class="nav-items"><a href="./favorites.html">Favorites</a></li> -->
                 </ul>
             </nav>
@@ -42,26 +44,25 @@
 
         </header>
         
-        <div class="container" id="search-recipes">
-            <div class="list-box">
+        <!-- <button data-target="modal1" class="btn modal-trigger">Modal</button> -->
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
                 <h4>Ingredients:</h4>
 
-                <div class="list-ingredients">
-                </div>
+                <div class="list-ingredients"></div>
 
                 <input class='list-input' placeholder="What's in your Kitchen?" id="input-list-item">
+            
                 <button class='list-input' id="add-item">Add Ingredient</button>
-                
+            
             </div>
             
-            <button id="recipe-search-btn">Search</button>
-            <div class="display-results">
-                <span id="pulled-info">Info</span>
-                <span id="pulled-image">Picture</span>
-                <span id="pulled-link">Link</span>
-
+            <div class="modal-footer">
+                <button class='modal-close' id="recipe-search-btn">Search</button>
             </div>
         </div>
+
         
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -73,3 +74,6 @@
     </body>
     
 </html>
+
+
+ 
