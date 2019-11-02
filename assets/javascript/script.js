@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    console.log('click to modal to search ---- ')
+    console.log('Im trying to make the button pop up the search bar, but it\'s being difficult')
+
+    $('.modal').modal();
+
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
 
     $('.dropdown-trigger').dropdown();
@@ -166,5 +171,5 @@ $(document).ready(function() {
     }
 
     renderList();
-    
+   
 })
