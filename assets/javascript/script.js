@@ -116,15 +116,10 @@ $(document).ready(function() {
 
             }
 
-                
-
-
         })
-
 
     })
     
-
     function renderList(){
         $('.list-ingredients').empty();
         for (let i = 0; i < list.length; i++) {
@@ -173,23 +168,3 @@ $(document).ready(function() {
     renderList();
     
 })
-
-
-//info for recipe ajax call
-
-// let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
-            
-//make button for ajax call
-
-// let recipeId = 646317
-           
-// $.ajax({
-//     url: recipeURL,
-//     method: "GET"
-// }).then(function(response))
-//      console.log(response)
-//     }
-
-//
-
-// https://api.spoonacular.com/recipes/656738/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327
