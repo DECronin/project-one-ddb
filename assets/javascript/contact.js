@@ -44,5 +44,6 @@ $('#send-comment').on('click', function(){
 });
 
 database.ref().on('child_added', function (snapshot) {
-    console.log('snapshot' + snapshot);
+    console.log('snapshot' + JSON.stringify(snapshot));
+    //send emails
 });
