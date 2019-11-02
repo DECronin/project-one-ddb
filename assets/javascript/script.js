@@ -61,7 +61,7 @@ $(document).ready(function() {
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true`
+        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true&number=6`
         
         console.log(foodURL)
 
@@ -92,20 +92,27 @@ $(document).ready(function() {
 
                 console.log(foodObject)
 
-                // recipeId = foodObject.recipeId
+                recipeId = foodObject.recipeId
 
-                // let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+                let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
 
-                // $.ajax({
-                //     url: recipeURL,
-                //     method: "GET"
-                // }).then(function(response) {
-                //     console.log(response)
-                // })
+                $.ajax({
+                    url: recipeURL,
+                    method: "GET"
+                }).then(function(response) {
+                    console.log(response)
 
-                //console.log(foodObject)
-                //make button with a data = to recipe id!!!  ---- add that to the div and the recipe section as well
-                //display this into a div 
+                })
+
+                let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+
+                $.ajax({
+                    url: summaryURL,
+                    method: "GET"
+                }).then(function(response) {
+                    console.log(response.summary)
+
+                })
 
             }
 
@@ -113,11 +120,6 @@ $(document).ready(function() {
 
 
         })
-
-        // example endpoint https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=apples,flour,sugar&ranking=1&limitLicense=true
-        // api key ?apiKey=6249e69ea0314b028cff85490334f327&
-        // link for ingredients `https://api.spoonacular.com/recipes/${recipeId}/ingredientWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
-        // link to get the recipe instructions `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
 
 
     })
