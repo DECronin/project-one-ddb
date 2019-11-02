@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel='icon' href='' />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
         <link rel='stylesheet' href='assets/css/style.css' />
 
     </head>
@@ -49,20 +50,27 @@
                 <button id="search-youtube">Search</button>
             </span>
 
-            <div class="display-video-results"> 
-                <div class="video-results"> <!--class="top-video">-->
-                    <!-- <iframe src=""></iframe>
-                    <h3>Video Title</h3>
-                    <p class="description">Video Description<p> -->
+            <div class="display-video-results glide"> 
+                <div class="glide_track" data-glide-el="track"> 
+                    <div data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>                        
+                    </div>
+                    <ul class="video-results glide__slides"></ul>
                 </div>
-                <!-- <div class="other-videos"></div> -->
             </div>
         </div>
-        
+
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <!-- <script src="https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.js"></script> -->
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/javascript/firebase.js"></script>
         <script src='assets/javascript/script.js'></script>
+        <script src="./assets/javascript/contact.js"></script>
         <script src="assets/javascript/video.js"></script>
         <script src="https://apis.google.com/js/api.js?onload=init"></script>
 

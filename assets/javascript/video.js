@@ -1,6 +1,6 @@
 const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
-
 let input;
+new Glide('.glide').mount();
 
 function getVideo() {
     console.log('vid-input = ' + input);
@@ -9,7 +9,7 @@ function getVideo() {
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
           key: youtubeKey,
-          q: input,
+          q: input, // + 'cooking' or category : food;
           part: 'snippet',
           maxResults: 10,
           type: 'video',
@@ -28,7 +28,7 @@ function getVideo() {
     console.log(data);
     let list = $('<div>');
     for (i = 0; i < 10; i++){
-        var newDiv = $('<div class="video-results">');
+        var newDiv = $('<li class="video-results" class="glide__slide">');
         var iframe = $('<iframe src="">');
         var h3 = $('<h3>');
         var desc = $('<p class="description">');
