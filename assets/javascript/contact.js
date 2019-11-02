@@ -1,5 +1,10 @@
-function validate(user, email, comment) {
-      
+
+
+var user;
+var email;
+var comment;
+
+function validate() { // modify for more apealing css
     if( user == "" ) {
        alert( "Please provide your name!" );
        $('#name-box').css('background-color', 'red');
@@ -14,19 +19,30 @@ function validate(user, email, comment) {
     }
  }
 
+ function sendComment(){
+    database.ref().push({
+        name: user,
+        email: email,
+        comment: comment
+    });
+ }
+
 $('#send-comment').on('click', function(){
     event.preventDefault();
     
-    var user = $('#username-input').val();
-    var email = $('#email-input').val();
-    var comment = $('#comment-input').val();
+    user = $('#username-input').val();
+    email = $('#email-input').val();
+    comment = $('#comment-input').val();
 
     if (user === '' || email === '' || comment === ''){
         alert('Please fill in all fields before sending comment');
-        validate(user, email, comment);
+        validate();
     } else {
         console.log('sending comment: ' + user + '//' + email + '//' + comment);
-        // sendComment();
+        sendComment();
     }
 });
 
+database.ref().on('child_added', function (snapshot) {
+    console.log('snapshot' + snapshot);
+});
