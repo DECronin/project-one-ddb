@@ -1,8 +1,10 @@
 const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 let input;
-const gligerConfig = {
+const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
     type: 'carousel',
-    perView: 3
+    perView: 3,
+    fucusAt: 'center',
+    gap: '50px'
 };
 
 function getVideo() {
@@ -31,7 +33,7 @@ function getVideo() {
     // console.log(data);
     
     for (i = 0; i < 10; i++){
-        let item = $('<li class="glide__slide">');
+        let item = $('<li class="glide__slide display-vid-list frames_item">');
         var iframe = $('<iframe>');
         var h3 = $('<h3>');
         var desc = $('<p class="description">');
