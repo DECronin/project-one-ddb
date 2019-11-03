@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel='icon' href='' />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
         <link rel='stylesheet' href='assets/css/style.css' />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
     </head>
 
@@ -51,18 +51,17 @@
             </span>
 
             <div class="display-video-results glide"> 
+                <div data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>                        
+                </div>
                 <div class="glide_track" data-glide-el="track"> 
-                    <div data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>                        
-                    </div>
                     <ul class="video-results glide__slides"></ul>
                 </div>
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-        <!-- <script src="https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.js"></script> -->
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
