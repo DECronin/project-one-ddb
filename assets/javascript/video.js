@@ -1,5 +1,9 @@
 const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 let input;
+const gligerConfig = {
+    type: 'carousel',
+    perView: 3
+};
 
 function getVideo() {
     console.log('vid-input = ' + input);
@@ -28,7 +32,6 @@ function getVideo() {
     
     for (i = 0; i < 10; i++){
         let item = $('<li class="glide__slide">');
-        // var insideDiv = $('<div>');
         var iframe = $('<iframe>');
         var h3 = $('<h3>');
         var desc = $('<p class="description">');
@@ -36,10 +39,9 @@ function getVideo() {
         h3.text(data.items[i].snippet.title);
         desc.text(data.items[i].snippet.description);
         item.append(iframe, h3, desc);
-        // item.append(insideDiv);
         $('.video-results').append(item);
     }
-new Glide('.glide').mount();
+    new Glide('.glide', gligerConfig).mount();
 }
 
 
