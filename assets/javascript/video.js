@@ -1,6 +1,9 @@
 const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 let input;
-new Glide('.glide').mount();
+const gligerConfig = {
+    type: 'carousel',
+    perView: 3
+};
 
 function getVideo() {
     console.log('vid-input = ' + input);
@@ -25,20 +28,20 @@ function getVideo() {
   }
 
   function embedVideo(data) {
-    console.log(data);
-    let list = $('<div>');
+    // console.log(data);
+    
     for (i = 0; i < 10; i++){
-        var newDiv = $('<li class="video-results" class="glide__slide">');
-        var iframe = $('<iframe src="">');
+        let item = $('<li class="glide__slide">');
+        var iframe = $('<iframe>');
         var h3 = $('<h3>');
         var desc = $('<p class="description">');
         iframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId);
         h3.text(data.items[i].snippet.title);
         desc.text(data.items[i].snippet.description);
-        newDiv.append(iframe, h3, desc);
-        list.append(newDiv)
+        item.append(iframe, h3, desc);
+        $('.video-results').append(item);
     }
-    $('.video-results').append(list);
+    new Glide('.glide', gligerConfig).mount();
 }
 
 
