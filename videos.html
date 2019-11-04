@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel='icon' href='' />
+        <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+        <!-- <link rel="stylesheet" href="https://glidejs.com/css/app.css"> -->
         <link rel='stylesheet' href='assets/css/style.css' />
 
     </head>
@@ -28,8 +32,6 @@
                     <span class='name'>Empty Kitchen</span>
                     <span class='name-sub'>What can you cook with what you've got?</span>
                 </h1>
-
-                <button id='modal-button' data-target="modal1" class="btn-modal modal-trigger">What's in Your Kitchen?</button>
                 
             </div>
             <nav class='navbar'>
@@ -43,35 +45,37 @@
             
 
         </header>
+        
+        <div class="container" id="search-recipes">
+            <span class="video-searcher">
+                <h4>Tutorials, Chefs, Recipes & More</h4>
+                <input class='list-input' placeholder="Chefs, Tutorials, Reviews" id="input-videos">
+                <button id="search-youtube">Search</button>
+            </span>
 
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Ingredients:</h4>
-
-                <div class="list-ingredients"></div>
-
-                <input class='list-input' placeholder="What's in your Kitchen?" id="input-list-item">
-            
-                <button class='list-input' id="add-item">Add Ingredient</button>
-            
-            </div>
-            
-            <div class="modal-footer">
-                <button class='modal-close' id="recipe-search-btn">Search</button>
+            <div class="display-video-results glide"> 
+                <div data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>                        
+                </div>
+                <div class="glide_track frames" data-glide-el="track"> 
+                    <ul class="video-results glide__slides frames_list"></ul>
+                </div>
             </div>
         </div>
 
-        
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/javascript/firebase.js"></script>
         <script src='assets/javascript/script.js'></script>
+        <script src="./assets/javascript/contact.js"></script>
         <script src="assets/javascript/video.js"></script>
         <script src="https://apis.google.com/js/api.js?onload=init"></script>
 
     </body>
     
 </html>
-
-
- 

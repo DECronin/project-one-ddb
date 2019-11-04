@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../external_files/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
+    background-image: url(../images/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
+    background-repeat: repeat;
+    font-weight: bolder;
+    padding: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+.container {
+    width: 80vw;
+    margin: 15px auto;
+    padding: 15px;
+    border: 3px black solid;
+    background-color: rgba(54, 88, 190, 0.8);
+}
+.display-results{
+    padding: 20px;
+    margin: 10px;
+    color: white;
+}
+#pulled-info,
+#pulled-image,
+#pulled-link{
+    border: dotted black 1px;
+    padding: 10px;
+    margin: 10px;
+}
+.checkbox,
+button{
+    padding: 5px;
+    background-color: white;
+    margin: 5px 5px 5px 0;
+
+}
+button:hover {
+    color: white;
+    background-color: black;
+    transform: translateY(-3px);
+}
+button:visited {
+    color: black;
+    background-color: white;
+}
+button:active {
+    color: black;
+    background-color: white;
+    transform: translateY(-1px);
+}
+label,
+.list-ingredients{
+    color: black;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(114, 2, 2, 0.8),
+        rgba(206, 79, 79, 0.8)),
+        url('../images/cooking-1.jpg');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+
+}
+.display-vid-list{
+    background-color: hsl(0, 0%, 96%);
+}
+
+.logo-display {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: black;
+    border-radius: 50%;
+
+}
+
+.logo {
+    height: 70px;
+    filter: invert(100%);
+
+}
+
+.name-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.name {
+    text-shadow: 2px 2px 2px white;
+    display: block;
+    text-align: center;
+    animation: moveDownLeft 2s;
+
+}
+
+.name-sub {
+    display: block;
+    text-shadow: 1px 1px 1px white;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    animation: moveDownRight 2s;
+    
+}
+h4 {
+    text-shadow: 1px 1px 1px white;
+    font-style: italic;
+}
+
+@keyframes moveDownLeft {
+    0%{
+        opacity: 0;
+        transform: translate(-300px, -200px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes moveDownRight {
+    0%{
+        opacity: 0;
+        transform: translate(300px, 200px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes moveUpBottom {
+    0%{
+        opacity: 0;
+        transform: translate(-300px, 200px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+.navbar {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    box-shadow: none;
+
+}
+
+.nav-items {
+    float: right;
+    margin-right: 20px;
+    text-shadow: 1px 1px 1px black;
+
+}
+
+.name-line {
+    margin-bottom: 80px;
+
+}
+
+#modal-button {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px gray;
+    animation: moveUpBottom 2s;
+
+}
+
+#modal-button:hover {
+    background-color: white;
+    color: black;
+
+}
