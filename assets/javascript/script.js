@@ -90,10 +90,10 @@ $(document).ready(function() {
                     image: food.image,
                     ingredients,
                     recipeId: food.id,
+                    recipe: [],
+                    summary: '',
 
                 }
-
-                console.log(foodObject)
 
                 recipeId = foodObject.recipeId
 
@@ -103,19 +103,24 @@ $(document).ready(function() {
                     url: recipeURL,
                     method: "GET"
                 }).then(function(response) {
-                    console.log(response)
+                    foodObject.recipe = response[0].steps
+
+                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+
+                    $.ajax({
+                        url: summaryURL,
+                        method: "GET"
+                    }).then(function(response) {
+                        foodObject.summary = response
+                        console.log(foodObject)
+
+                    })
 
                 })
 
-                let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+                
 
-                $.ajax({
-                    url: summaryURL,
-                    method: "GET"
-                }).then(function(response) {
-                    console.log(response.summary)
-
-                })
+                //put info into a div;
 
             }
 
