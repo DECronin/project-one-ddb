@@ -70,6 +70,9 @@ label,
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
 
 }
+.display-vid-list{
+    background-color: hsl(0, 0%, 96%);
+}
 
 .logo-display {
     position: absolute;
