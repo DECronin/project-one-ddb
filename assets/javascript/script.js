@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     $('.modal').modal();
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));

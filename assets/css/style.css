@@ -6,6 +6,7 @@
 
 body {
     background-image: url(../external_files/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
+    background-image: url(../images/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
     background-repeat: repeat;
     font-weight: bolder;
     padding: 20px;
@@ -93,7 +94,6 @@ label,
     text-transform: uppercase;
     text-align: center;
     backface-visibility: hidden;
-
 }
 
 .name {
