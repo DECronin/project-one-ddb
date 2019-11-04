@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    console.log('click to modal to search ---- ')
-    console.log('Im trying to make the button pop up the search bar, but it\'s being difficult')
 
     $('.modal').modal();
 
