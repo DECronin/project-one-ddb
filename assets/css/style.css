@@ -9,12 +9,13 @@ body {
     background-image: url(../images/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
     background-repeat: repeat;
     font-weight: bolder;
-    padding: 20px;
+    font-size: 82.5%;
+    padding: 2rem;
     font-family: 'Rubik', sans-serif;
 }
 .container {
     width: 80vw;
-    margin: 15px auto;
+    margin: 1.5rem auto;
     padding: 15px;
     border: 3px black solid;
     background-color: rgba(54, 88, 190, 0.8);
