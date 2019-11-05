@@ -4,16 +4,20 @@ var user;
 var email;
 var comment;
 
-function validate() { // modify for more apealing css
+function validate() {
     $('#empty-contact').empty();
+    $('#username-input #email-input #comment-input').removeClass('invalid');
     if (user == "" ) {
-       $('#empty-contact').append('Please provide a valid Name.');
+        $('#empty-contact').append('* Please provide a valid Name.');
+        $('#username-input').addClass('invalid');
     }
-    if (email == "" && !email.includes('@') && !email.includes('.')) {
-        $('#empty-contact').append('<br>Please provide a valid Email Address.');
+    if (email == "" || !email.includes('@') || !email.includes('.')) {
+        $('#empty-contact').append('<br>* Please provide a valid Email Address.');
+        $('#email-input').addClass('invalid');
     }
     if (comment == "" ) {
-        $('#empty-contact').append('<br>Please provide a Comment.');
+        $('#empty-contact').append('<br>* Please provide a Comment.');
+        $('#comment-input').addClass('invalid');
     }
  }
 
