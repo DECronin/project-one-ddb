@@ -226,3 +226,17 @@ h4 {
     background-color: rgb(85, 85, 85);
     margin-top: -1px;
 }
+
+.display-recipe-results {
+    padding-top: 12rem;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.display-recipe-list {
+    background-color: rgba(148, 143, 199, 0.8);
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+}

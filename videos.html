@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel='icon' href='' />
+        <link rel='icon' href='assets/images/pot.png' />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"> -->
         <link rel='stylesheet' href='assets/css/style.css' />
@@ -37,7 +37,6 @@
             <nav class='navbar'>
                 <ul>
                     <li class="nav-items"><a href="./contact.html">Contact</a></li>
-                    <!-- <li class="nav-items"><a href="./favorites.html">Favorites</a></li> -->
                     <li class="nav-items"><a href="./videos.html">Videos</a></li>
                     <li class="nav-items"><a href="./index.html">Search</a></li>
                 </ul>
@@ -51,19 +50,33 @@
                 <input class='list-input' placeholder="Chefs, Tutorials, Reviews" id="input-videos">
                 <button class="modal-close" id="search-youtube">Search</button>
             </div>
+
+            <div class="modal-footer">
+                <a href="#display"><button class='modal-close' id="recipe-search-btn">Search</button></a>
+            </div>
         </div>
         
-        <section class="container" id="search-recipes">
-            <div class="display-video-results glide"> 
-                <div data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>                        
+        <div class="seperator"></div>
+
+        <section class="display">
+            <section class="container" id="search-recipes">
+                <div class="display-video-results glide"> 
+                    <div data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>                        
+                    </div>
+                    <div class="glide_track frames" data-glide-el="track"> 
+                        <ul class="video-results glide__slides"></ul>
+                    </div>
                 </div>
-                <div class="glide_track frames" data-glide-el="track"> 
-                    <ul class="video-results glide__slides"></ul>
-                </div>
-            </div>
+            </section>
         </section>
+
+        <footer class="footer">
+
+            <p>This is some text</p>
+
+        </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
