@@ -65,13 +65,15 @@ $(document).ready(function() {
             search += `,${ing6}`
         }
 
+        let apiKey = 'd34f094ff89a48a5935a35df751099ae'
+        //6249e69ea0314b028cff85490334f327
 
         list = [];
         localStorage.setItem("ingredientlist", JSON.stringify(list));
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true&number=6`
+        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${search}&ranking=1&limitLicense=true&number=6`
         
         $.ajax({
             url: foodURL,
@@ -105,7 +107,7 @@ $(document).ready(function() {
 
                 recipeId = foodObject.recipeId
 
-                let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+                let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${apiKey}`
 
                 $.ajax({
                     url: recipeURL,
@@ -113,7 +115,7 @@ $(document).ready(function() {
                 }).then(function(response) {
                     foodObject.recipe = response[0].steps
 
-                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
+                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=${apiKey}`
 
                     $.ajax({
                         url: summaryURL,
@@ -133,7 +135,11 @@ $(document).ready(function() {
 
                         let image = $(`<img alt='picture of ${foodObject.title}' />`)
                         image.attr('src', foodObject.image)
-                        image.addClass('recipe-image')
+                        image.addClass('recipe-image u-float-right')
+
+                        let formatText1 = $('<h5>')
+                        formatText1.text('Ingredients:')
+
 
                         let ingList = $('<ul>')
                         ingList.addClass('ingredient-list')
@@ -143,19 +149,22 @@ $(document).ready(function() {
                             ingList.append(newIng)
                         }
 
+                        let formatText2 = $('<h5>')
+                        formatText2.text('Recipe:')
+
                         let recipeList = $('<ol>')
                         recipeList.addClass('recipe-list')
                         for(let j = 0; j < foodObject.recipe.length; j++) {
-                            let newIng = $('<li>')
-                            newIng.text(foodObject.recipe[j].step)
-                            ingList.append(newIng)
+                            let newRec = $('<li>')
+                            newRec.text(foodObject.recipe[j].step)
+                            recipeList.append(newRec)
                         }
 
                         let footer = $('<p>')
                         footer.addClass('food-stats')
-                        footer.text(`Cal: ${foodObject.cal}  Carbs: ${foodObject.carbs}  Fat: ${foodObject.fat}  Protein: ${foodObject.protein}`)
+                        footer.text(`Cal: ${foodObject.cal}       Carbs: ${foodObject.carbs}       Fat: ${foodObject.fat}       Protein: ${foodObject.protein}`)
 
-                        item.append(title, image, ingList, recipeList, footer)
+                        item.append(title, image, formatText1, ingList, formatText2, recipeList, footer)
                         $('.recipe-results').append(item)
 
                         new Glide('.glide', gligerConfig).mount();
