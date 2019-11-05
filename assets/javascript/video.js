@@ -1,5 +1,7 @@
 const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 let input;
+const defaultSearch = 'food';
+
 const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
     type: 'carousel',
     perView: 3,
@@ -42,7 +44,7 @@ function getVideo() {
     
     for (i = 0; i < 10; i++){
         let item = $('<li class="glide__slide display-vid-list">');
-        var iframe = $('<iframe>');
+        var iframe = $('<iframe class="video-display">');
         var title = $('<p class="video-title">');
         var desc = $('<p class="description">');
         iframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId);
@@ -56,6 +58,6 @@ function getVideo() {
 
 
 $('#search-youtube').on('click', function(){
-    input = $('#input-videos').val().trim();
+    input = $('#input-videos').val().trim() || defaultSearch;
     getVideo();
 })
