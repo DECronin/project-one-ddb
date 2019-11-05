@@ -27,6 +27,9 @@ function validate() {
         email: email,
         comment: comment
     });
+    $('#username-input').val('');
+    $('#email-input').val('');
+    $('#comment-input').val('');
  }
 
 $('#send-comment').on('click', function(){
