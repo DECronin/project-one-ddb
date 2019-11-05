@@ -4,6 +4,8 @@ $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
 
+    const apiKey = 'd34f094ff89a48a5935a35df751099ae';
+
     const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
         type: 'carousel',
         perView: 1,
@@ -71,7 +73,7 @@ $(document).ready(function() {
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true&number=6`
+        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${search}&ranking=1&limitLicense=true&number=6`
         
         $.ajax({
             url: foodURL,
