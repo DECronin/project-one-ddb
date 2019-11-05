@@ -75,10 +75,8 @@ label,
     padding: 20px;
     border: solid 3px hsla(0, 0%, 0%, 0.5);
     object-fit: cover;
-    overflow: auto;
-    min-width: 20vw;
+    min-width: 340px;
 }
-
 .logo-display {
     position: absolute;
     top: 30px;
