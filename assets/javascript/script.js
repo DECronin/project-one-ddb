@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     $('.modal').modal();
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
@@ -66,8 +65,6 @@ $(document).ready(function() {
 
         let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true&number=6`
         
-        console.log(foodURL)
-
         $.ajax({
             url: foodURL,
             method: "GET"
@@ -91,7 +88,10 @@ $(document).ready(function() {
                     ingredients,
                     recipeId: food.id,
                     recipe: [],
-                    summary: '',
+                    cal: '',
+                    carbs: '',
+                    fat: '',
+                    protein: '',
 
                 }
 
@@ -105,22 +105,29 @@ $(document).ready(function() {
                 }).then(function(response) {
                     foodObject.recipe = response[0].steps
 
-                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+                    // let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
 
                     $.ajax({
                         url: summaryURL,
                         method: "GET"
                     }).then(function(response) {
-                        foodObject.summary = response
+                        foodObject.cal = response.calories
+                        foodObject.carbs = response.carbs
+                        foodObject.fat = response.fat
+                        foodObject.protein = response.protein
+                        
                         console.log(foodObject)
+
+                        //put info into the DOM
+
+
+
+
 
                     })
 
                 })
-
-                
-
-                //put info into a div;
 
             }
 
