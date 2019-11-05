@@ -4,6 +4,14 @@ $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
 
+    const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
+        type: 'carousel',
+        perView: 1,
+        fucusAt: 'center',
+        gap: '80px',
+        
+    };
+
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
     
@@ -105,7 +113,6 @@ $(document).ready(function() {
                 }).then(function(response) {
                     foodObject.recipe = response[0].steps
 
-                    // let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
                     let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=6249e69ea0314b028cff85490334f327`
 
                     $.ajax({
@@ -120,10 +127,13 @@ $(document).ready(function() {
                         console.log(foodObject)
 
                         //put info into the DOM
+                        for(let i = 0; i < foodObject.ingredients.length; i++) {
+                            for(let j = 0; j < foodObject.recipe.length; j++) {
 
+                            }
+                        }
 
-
-
+                        new Glide('.glide', gligerConfig).mount();
 
                     })
 
