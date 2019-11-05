@@ -38,12 +38,12 @@ $('#send-comment').on('click', function(){
         alert('Please fill in all fields before sending comment');
         validate();
     } else {
-        console.log('sending comment: ' + user + '//' + email + '//' + comment);
+        //console.log('sending comment: ' + user + '//' + email + '//' + comment);
         sendComment();
     }
 });
 
-database.ref().on('child_added', function (snapshot) {
-    console.log('snapshot' + JSON.stringify(snapshot));
+//database.ref().on('child_added', function (snapshot) {
+    //console.log('snapshot' + JSON.stringify(snapshot));
     //send emails
-});
+//});
