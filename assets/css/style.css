@@ -16,19 +16,14 @@ body {
 .container {
     width: 80vw;
     margin: 1.5rem auto;
-    padding-top: 13rem;
+    padding: 15px;
+    border: 3px black solid;
+    background-color: rgba(54, 88, 190, 0.8);
 }
 .display-results{
     padding: 20px;
     margin: 10px;
     color: white;
-}
-.display-video-results,
-.display-recipe-results,
-#contact-form{
-    border: 3px black solid;
-    background-color: rgba(54, 88, 190, 0.8);
-    padding: 15px;
 }
 #pulled-info,
 #pulled-image,
@@ -224,7 +219,6 @@ h4 {
     background-size: cover;
     background-position: center;
     clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
-    text-align: center;
 }
 
 .footer {
@@ -237,7 +231,6 @@ h4 {
     padding-top: 12rem;
     width: 90%;
     margin: 0 auto;
-    text-align: left;
     
 }
 
@@ -246,20 +239,4 @@ h4 {
     font-size: 1.3rem;
     border-radius: 5px;
     padding: 1rem 2rem;
-}
-
-#contact-form {
-    margin-top: 18rem;
-    width: 90%;
-    display: inline-block;
-}
-
-.u-float-right {
-    float: right;
-    height: 200px;
-
-}
-
-.food-stats {
-    margin-top: 10px;
 }
