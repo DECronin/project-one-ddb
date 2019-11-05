@@ -5,17 +5,15 @@ var email;
 var comment;
 
 function validate() { // modify for more apealing css
-    if( user == "" ) {
-       alert( "Please provide your name!" );
-       $('#name-box').css('background-color', 'red');
+    $('#empty-contact').empty();
+    if (user == "" ) {
+       $('#empty-contact').append('Please provide a valid Name.');
     }
-    if( email == "" ) {
-       alert( "Please provide your Email!" );
-       $('#email-box').css('background-color', 'red');
+    if (email == "" && !email.includes('@') && !email.includes('.')) {
+        $('#empty-contact').append('<br>Please provide a valid Email Address.');
     }
-    if( comment == "" ) {
-       alert( "Please provide your comment!" );
-       $('#comment-box').css('background-color', 'red');
+    if (comment == "" ) {
+        $('#empty-contact').append('<br>Please provide a Comment.');
     }
  }
 
@@ -35,7 +33,6 @@ $('#send-comment').on('click', function(){
     comment = $('#comment-input').val();
 
     if (user === '' || email === '' || comment === ''){
-        alert('Please fill in all fields before sending comment');
         validate();
     } else {
         //console.log('sending comment: ' + user + '//' + email + '//' + comment);
