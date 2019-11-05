@@ -9,12 +9,13 @@ body {
     background-image: url(../images/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
     background-repeat: repeat;
     font-weight: bolder;
-    padding: 20px;
+    font-size: 82.5%;
+    padding: 2rem;
     font-family: 'Rubik', sans-serif;
 }
 .container {
     width: 80vw;
-    margin: 15px auto;
+    margin: 1.5rem auto;
     padding: 15px;
     border: 3px black solid;
     background-color: rgba(54, 88, 190, 0.8);
@@ -224,4 +225,18 @@ h4 {
     height: 25vh;
     background-color: rgb(85, 85, 85);
     margin-top: -1px;
+}
+
+.display-recipe-results {
+    padding-top: 12rem;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.display-recipe-list {
+    background-color: rgba(148, 143, 199, 0.8);
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 1rem 2rem;
 }
