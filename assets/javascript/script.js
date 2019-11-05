@@ -127,12 +127,35 @@ $(document).ready(function() {
                         console.log(foodObject)
 
                         //put info into the DOM
-                        for(let i = 0; i < foodObject.ingredients.length; i++) {
-                            for(let j = 0; j < foodObject.recipe.length; j++) {
+                        let item = $('<li class="glide__slide display-recipe-list">');
+                        let title = $('<h4>');
+                        title.text(foodObject.title);
 
-                            }
+                        let image = $(`<img alt='picture of ${foodObject.title}' />`)
+                        image.attr('src', foodObject.image)
+                        image.addClass('recipe-image')
+
+                        let ingList = $('<ul>')
+                        ingList.addClass('ingredient-list')
+                        for(let i = 0; i < foodObject.ingredients.length; i++) {
+                            let newIng = $('<li>')
+                            newIng.text(foodObject.ingredients[i])
+                            ingList.append(newIng)
                         }
 
+                        let recipeList = $('<ol>')
+                        recipeList.addClass('recipe-list')
+                        for(let j = 0; j < foodObject.recipe.length; j++) {
+                            let newIng = $('<li>')
+                            newIng.text(foodObject.recipe[j])
+                            ingList.append(newIng)
+                        }
+
+                        let footer = $('<p>')
+                        footer.text(`Cal: ${foodObject.cal}  Carbs: ${foodObject.carbs}  Fat: ${foodObject.fat}  Protein: ${foodObject.protein}`)
+
+                        item.append(title, image, ingList, recipeList, footer)
+                        $('.recipe-results').append(item)
                         new Glide('.glide', gligerConfig).mount();
 
                     })
