@@ -124,7 +124,7 @@ $(document).ready(function() {
                         foodObject.fat = response.fat
                         foodObject.protein = response.protein
                         
-                        console.log(foodObject)
+                        console.log(foodObject.recipe)
 
                         //put info into the DOM
                         let item = $('<li class="glide__slide display-recipe-list">');
@@ -147,15 +147,17 @@ $(document).ready(function() {
                         recipeList.addClass('recipe-list')
                         for(let j = 0; j < foodObject.recipe.length; j++) {
                             let newIng = $('<li>')
-                            newIng.text(foodObject.recipe[j])
+                            newIng.text(foodObject.recipe[j].step)
                             ingList.append(newIng)
                         }
 
                         let footer = $('<p>')
+                        footer.addClass('food-stats')
                         footer.text(`Cal: ${foodObject.cal}  Carbs: ${foodObject.carbs}  Fat: ${foodObject.fat}  Protein: ${foodObject.protein}`)
 
                         item.append(title, image, ingList, recipeList, footer)
                         $('.recipe-results').append(item)
+
                         new Glide('.glide', gligerConfig).mount();
 
                     })
