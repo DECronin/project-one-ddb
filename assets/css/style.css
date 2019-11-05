@@ -16,20 +16,17 @@ body {
 .container {
     width: 80vw;
     margin: 1.5rem auto;
-    padding-top: 13rem;
+    border: 3px black solid;
+    background-color: rgba(54, 88, 190, 0.8);
+    padding-top: ;
+    
 }
 .display-results{
     padding: 20px;
     margin: 10px;
     color: white;
 }
-.display-video-results,
-.display-recipe-results,
-#contact-form{
-    border: 3px black solid;
-    background-color: rgba(54, 88, 190, 0.8);
-    padding: 15px;
-}
+
 #pulled-info,
 #pulled-image,
 #pulled-link{
@@ -225,6 +222,7 @@ h4 {
     background-position: center;
     clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
     text-align: center;
+    padding-top: 13rem;
 }
 
 .footer {
@@ -234,7 +232,6 @@ h4 {
 }
 
 .display-recipe-results {
-    padding-top: 12rem;
     width: 90%;
     margin: 0 auto;
     text-align: left;
@@ -249,7 +246,6 @@ h4 {
 }
 
 #contact-form {
-    margin-top: 18rem;
     width: 90%;
     display: inline-block;
 }
