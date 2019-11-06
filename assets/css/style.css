@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-image: url(../external_files/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
     background-image: url(../images/3e0859251f132771094aab6faf866f4f\ \(2\).jpg);
@@ -18,15 +17,12 @@ body {
     margin: 1.5rem auto;
     border: 3px black solid;
     background-color: rgba(54, 88, 190, 0.8);
-    padding-top: ;
-    
 }
 .display-results{
     padding: 20px;
     margin: 10px;
     color: white;
 }
-
 #pulled-info,
 #pulled-image,
 #pulled-link{
@@ -59,7 +55,6 @@ label,
 .list-ingredients{
     color: black;
 }
-
 .header {
     position: relative;
     height: 95vh;
@@ -88,13 +83,11 @@ label,
     border-radius: 50%;
 
 }
-
 .logo {
     height: 70px;
     filter: invert(100%);
 
 }
-
 .name-div {
     position: absolute;
     top: 50%;
@@ -104,7 +97,6 @@ label,
     text-align: center;
     backface-visibility: hidden;
 }
-
 .name {
     text-shadow: 2px 2px 2px white;
     display: block;
@@ -112,7 +104,6 @@ label,
     animation: moveDownLeft 2s;
 
 }
-
 .name-sub {
     display: block;
     text-shadow: 1px 1px 1px white;
@@ -126,7 +117,6 @@ h4 {
     text-shadow: 1px 1px 1px white;
     font-style: italic;
 }
-
 @keyframes moveDownLeft {
     0%{
         opacity: 0;
@@ -148,7 +138,6 @@ h4 {
         transform: translate(0,0);
     }
 }
-
 @keyframes moveUpBottom {
     0%{
         opacity: 0;
@@ -159,7 +148,6 @@ h4 {
         transform: translate(0,0);
     }
 }
-
 .navbar {
     background-color: inherit;
     color: inherit;
@@ -167,19 +155,16 @@ h4 {
     box-shadow: none;
 
 }
-
 .nav-items {
     float: right;
     margin-right: 20px;
     text-shadow: 1px 1px 1px black;
 
 }
-
 .name-line {
     margin-bottom: 80px;
 
 }
-
 #modal-button {
     position: relative;
     display: inline-block;
@@ -193,13 +178,11 @@ h4 {
     animation: moveUpBottom 2s;
 
 }
-
 #modal-button:hover {
     background-color: white;
     color: black;
 
 }
-
 .seperator {
     content: '';
     clear: both;
@@ -209,7 +192,6 @@ h4 {
     margin-bottom: -24vh;
 
 }
-
 .display {
     position: relative;
     height: 95vh;
@@ -224,38 +206,62 @@ h4 {
     text-align: center;
     padding-top: 13rem;
 }
-
 .footer {
     height: 25vh;
     background-color: rgb(85, 85, 85);
     margin-top: -1px;
 }
-
 .display-recipe-results {
     width: 90%;
     margin: 0 auto;
     text-align: left;
     
 }
-
 .display-recipe-list {
     background-color: rgba(148, 143, 199, 0.8);
     font-size: 1.3rem;
     border-radius: 5px;
     padding: 1rem 2rem;
 }
-
 #contact-form {
     width: 90%;
     display: inline-block;
+    margin: 0 auto;
 }
-
+#empty-contact{
+    font-size: 1rem;
+}
 .u-float-right {
     float: right;
     height: 200px;
 
 }
-
 .food-stats {
     margin-top: 10px;
+}
+
+.footer-nav {
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+
+.footer-nav__header {
+    padding: 5px;
+    
+
+}
+
+.footer-nav__links {
+    display: block;
+    padding: 5px;
+}
+
+.contact-links {
+    width: 70%;
+    text-align: center;
+    display: inline-block;
 }
