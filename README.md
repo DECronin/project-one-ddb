@@ -8,11 +8,11 @@
 ## User Stories:
 
 ## Current Display(s):
-### Phone:
+##### Phone:
 
-### Tablet:
+##### Tablet:
 
-### Desctop:
+##### Desctop:
 
 ## Future Development:
 
