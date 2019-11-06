@@ -206,11 +206,7 @@ h4 {
     text-align: center;
     padding-top: 13rem;
 }
-.footer {
-    height: 25vh;
-    background-color: rgb(85, 85, 85);
-    margin-top: -1px;
-}
+
 .display-recipe-results {
     width: 90%;
     margin: 0 auto;
@@ -240,28 +236,76 @@ h4 {
     margin-top: 10px;
 }
 
+.footer {
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, .5);
+    background-color: rgb(85, 85, 85);
+    margin-top: -1px;
+    font-weight: normal;
+    
+}
+
+.names {
+    margin: .5rem;
+}
+
 .footer-nav {
     width: 20%;
     text-align: center;
     display: inline-block;
-    padding: 10px;
-    font-size: 1rem;
+    padding: .5rem;
+    margin: auto;
+    position: relative;
+    top: -2rem;
 
 }
 
 .footer-nav__header {
     padding: 5px;
-    
+    text-decoration: underline;
 
 }
 
 .footer-nav__links {
     display: block;
     padding: 5px;
+
+}
+
+.footer-nav__links:link,
+.footer-nav__links:visited,
+.footer-nav__links:active {
+    color: inherit
+}
+.footer-nav__links:hover {
+    color: black;
+    text-shadow: 2px 2px 2px white;
 }
 
 .contact-links {
     width: 70%;
     text-align: center;
     display: inline-block;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.socialLink {
+    margin: .5rem;
+}
+
+.creator-text {
+    display: none;
+    position: absolute;
+    top: -7rem;
+    right: 25%;
+    text-align: center;
+    font-size: 4rem;
+
+
+    background-image: linear-gradient(to right bottom, rgb(53, 255, 35), rgb(103, 162, 252));
+    -webkit-background-clip: text;
+    color: transparent;
+
 }
