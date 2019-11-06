@@ -225,5 +225,11 @@ $(document).ready(function() {
     }
 
     renderList();
+
+    $('.contact-links').hover(function () {
+        $('.creator-text').css('display', 'block')
+    }, function () {
+        $('.creator-text').css('display', 'none')
+    })
    
 })
