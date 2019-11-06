@@ -20,11 +20,12 @@ We want users to have that resource to explore or draw inspiration for their mea
 
 
 ### Current Display(s):
+
 ##### Phone:
 
 ##### Tablet:
 
-##### Desctop:
+##### Desktop:
 
 ### Future Development:
 
