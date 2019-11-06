@@ -259,3 +259,29 @@ h4 {
 .food-stats {
     margin-top: 10px;
 }
+
+.footer-nav {
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+
+.footer-nav__header {
+    padding: 5px;
+    
+
+}
+
+.footer-nav__links {
+    display: block;
+    padding: 5px;
+}
+
+.contact-links {
+    width: 70%;
+    text-align: center;
+    display: inline-block;
+}
