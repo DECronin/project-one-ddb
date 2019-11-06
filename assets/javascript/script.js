@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
 
-    const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
+    const gligerConfig = { 
         type: 'carousel',
         perView: 1,
         fucusAt: 'center',
@@ -66,7 +66,6 @@ $(document).ready(function() {
         }
 
         let apiKey = 'd34f094ff89a48a5935a35df751099ae'
-        //6249e69ea0314b028cff85490334f327
 
         list = [];
         localStorage.setItem("ingredientlist", JSON.stringify(list));
@@ -128,7 +127,6 @@ $(document).ready(function() {
                         
                         console.log(foodObject.recipe)
 
-                        //put info into the DOM
                         let item = $('<li class="glide__slide display-recipe-list">');
                         let title = $('<h4>');
                         title.text(foodObject.title);

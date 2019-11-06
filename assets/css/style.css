@@ -194,7 +194,7 @@ h4 {
 }
 .display {
     position: relative;
-    height: 95vh;
+    min-height: 95vh;
     background-image: linear-gradient(
         to right bottom,
         rgba(114, 2, 2, 0.8),
@@ -289,6 +289,7 @@ h4 {
     display: inline-block;
     margin-top: 1rem;
     position: relative;
+
 }
 
 .socialLink {
