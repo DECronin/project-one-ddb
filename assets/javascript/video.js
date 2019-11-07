@@ -52,7 +52,5 @@ function getVideo() {
 $('#search-youtube').on('click', function(){
     input = $('#input-videos').val().trim() || defaultSearch;
     getVideo();
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("#display").offset().top
-    }, 1500);
+    
 })
