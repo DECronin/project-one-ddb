@@ -2,7 +2,7 @@ const youtubeKey = 'AIzaSyCyE6uRr4N0thLeeGRFNJvNkVm4o4sSbBo';
 let input;
 const defaultSearch = 'food';
 
-const gligerConfig = { //use breakpoints for media respinsiveness and classes can be suded for individual elements
+const gligerConfig = {
     type: 'carousel',
     perView: 3,
     fucusAt: 'center',
@@ -24,7 +24,7 @@ function getVideo() {
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
           key: youtubeKey,
-          q: input, // + 'cooking' or category : food;
+          q: input, 
           part: 'snippet',
           maxResults: 10,
           type: 'video',
@@ -40,7 +40,6 @@ function getVideo() {
   }
 
   function embedVideo(data) {
-    // console.log(data);
     
     for (i = 0; i < 10; i++){
         let item = $('<li class="glide__slide display-vid-list">');
@@ -60,4 +59,10 @@ function getVideo() {
 $('#search-youtube').on('click', function(){
     input = $('#input-videos').val().trim() || defaultSearch;
     getVideo();
+
+    
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#display").offset().top
+    }, 1500);
+    
 })
