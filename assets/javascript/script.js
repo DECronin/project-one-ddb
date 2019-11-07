@@ -172,21 +172,7 @@ $(document).ready(function() {
             }
 
         })
-        
-        // new Glide('.glide', gliderSearch).mount(); move to end of display loop??????
 
-    })
-
-    $('#test-button').on('click', function(){
-        event.preventDefault();
-        for (i=0; i < 6; i++){
-            let div = $('<li class="glide__slide display-recipe-list">');
-            let text = $('<p>');
-            text.text(i);
-            div.append(text);
-            $('.recipe-results').append(div);
-        }
-        new Glide('.glide', gliderSearch).mount();
     })
 
     function renderList(){
