@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
 
-    const gligerConfig = { 
+    const gliderSearch = { 
         type: 'carousel',
         perView: 1,
         fucusAt: 'center',
@@ -163,7 +163,7 @@ $(document).ready(function() {
                         item.append(title, image, formatText1, ingList, formatText2, recipeList, footer)
                         $('.recipe-results').append(item)
 
-                        new Glide('.glide', gligerConfig).mount();
+                        new Glide('.glide', gliderSearch).mount();
 
                     })
 
@@ -174,7 +174,7 @@ $(document).ready(function() {
         })
 
     })
-    
+
     function renderList(){
         $('.list-ingredients').empty();
         for (let i = 0; i < list.length; i++) {
@@ -234,4 +234,4 @@ $(document).ready(function() {
         }, 1500);
     })
    
-})
+});
