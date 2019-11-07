@@ -229,5 +229,11 @@ $(document).ready(function() {
     }, function () {
         $('.creator-text').css('display', 'none')
     })
+
+    $('.scroll').on('click', function () {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#display").offset().top
+        }, 1500);
+    })
    
 })
