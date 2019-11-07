@@ -48,14 +48,14 @@
             <div class="modal-content">
                 <h4>Tutorials, Chefs, Recipes & More:</h4>
                 <input class='list-input' placeholder="Chefs, Tutorials, Reviews" id="input-videos">
-                <button class="modal-close" id="search-youtube">Search</button>
+                <a href="#search-recipes"><button class="modal-close" id="search-youtube">Search</button></a>
             </div>
         </div>
         
         <div class="seperator"></div>
 
-        <section class="display" id='display'>
-            <section id="search-recipes">
+        <section class="display">
+            <section  id="search-recipes"><!--class="container"-->
                 <div class="display-video-results glide"> 
                     <div data-glide-el="controls">
                         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
@@ -111,13 +111,9 @@
 
         <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="./assets/javascript/firebase.js"></script>
-        <script src='assets/javascript/script.js'></script>
-        <script src="./assets/javascript/contact.js"></script>
+        <script src="./assets/javascript/script.js"></script>
         <script src="assets/javascript/video.js"></script>
         <script src="https://apis.google.com/js/api.js?onload=init"></script>
 
