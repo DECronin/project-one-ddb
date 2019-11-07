@@ -5,12 +5,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Project 1</title>
+        <title>Empty Kitchen</title>
 
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel='icon' href='' />
+        <link rel='icon' href='assets/images/pot.png' />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
         <link rel='stylesheet' href='assets/css/style.css' />
 
     </head>
@@ -20,7 +22,7 @@
         <header class='header'>
 
             <div class='logo-display'>
-                <img src='assets/images/pot.png' alt='logo' class='logo' />
+                <a href='https://github.com/DECronin/project-one-ddb' target='_blank'><img src='assets/images/pot.png' alt='logo' class='logo' /></a>
             </div>
 
             <div class='name-div'>
@@ -35,7 +37,6 @@
             <nav class='navbar'>
                 <ul>
                     <li class="nav-items"><a href="./contact.html">Contact</a></li>
-                    <!-- <li class="nav-items"><a href="./favorites.html">Favorites</a></li> -->
                     <li class="nav-items"><a href="./videos.html">Videos</a></li>
                     <li class="nav-items"><a href="./index.html">Search</a></li>
                 </ul>
@@ -47,27 +48,78 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4>Ingredients:</h4>
-
                 <div class="list-ingredients"></div>
-
                 <input class='list-input' placeholder="What's in your Kitchen?" id="input-list-item">
-            
                 <button class='list-input' id="add-item">Add Ingredient</button>
-            
             </div>
             
             <div class="modal-footer">
-                <button class='modal-close' id="recipe-search-btn">Search</button>
+                <button class='modal-close scroll' id="recipe-search-btn">Search</button></a>
             </div>
         </div>
 
+        <div class="seperator"></div>
+
+        <section class="display">
+
+            <div class="display-recipe-results glide" id='display'> 
+                <div data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>                        
+                </div>
+                <div class="glide_track frames" data-glide-el="track"> 
+                    <ul class="recipe-results glide__slides"></ul>
+                </div>
+            </div>
+            
+        </section>
+
+        <footer class="footer">
+            <div class="footer-nav">
+                <p class="footer-nav__header">Site Map</p>
+                <a href="./index.html" class="footer-nav__links">Search</a>
+                <a href="./videos.html" class="footer-nav__links">Videos</a>
+                <a href="./contact.html" class="footer-nav__links">Contact</a>
+            </div>
+            <div class="contact-links">
+                <div class='creator-text'>Site Creators!</div>
+                <div class="contact-links__Dana names">
+                    <p>Dana Cronin:</p>
+                    <a href='https://github.com/DECronin' target='_blank'>
+                        <img class='socialLink' src='./assets/images/github-white.png' alt='github link' /></a>
+                    
+                    <a href='https://twitter.com/decronin1' target='_blank'>
+                        <img class='socialLink' src='./assets/images/twitter-circle.png' height='32px' alt='twitter link' /></a>
+    
+                    <a href='mailto:cronin43224235@gmail.com'>
+                        <img class='socialLink' src='./assets/images/iconfinder_gmail_132837.png' alt='gmail link' height='32px' /></a>
+                    
+                    <a href='https://www.linkedin.com/in/dana-cronin-7623a5130/' target='_blank'>
+                        <img class='socialLink' src='./assets/images/LI-In-Bug.png' alt='linkedin link' height='32px' /></a>
+                </div>
+                <div class="contact-links__David names">
+                    <p>David McCulloch:</p>
+                    <a href='https://github.com/DMcCulloch-Coder' target='_blank'>
+                        <img class='socialLink' src='./assets/images/github-white.png' alt='github link' /></a>
+                    
+                    <a href='https://twitter.com/DM_Coder' target='_blank'>
+                        <img class='socialLink' src='./assets/images/twitter-circle.png' height='32px' alt='twitter link' /></a>
+    
+                    <a href='mailto:DMcCulloch86@gmail.com'>
+                        <img class='socialLink' src='./assets/images/iconfinder_gmail_132837.png' alt='gmail link' height='32px' /></a>
+                    
+                    <a href='https://www.linkedin.com/in/david-mcculloch-29a196190/' target='_blank'>
+                        <img class='socialLink' src='./assets/images/LI-In-Bug.png' alt='linkedin link' height='32px' /></a>
+                </div>
+            </div>
+
+        </footer>
+
         
-        <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src='assets/javascript/script.js'></script>
-        <script src="assets/javascript/video.js"></script>
-        <script src="https://apis.google.com/js/api.js?onload=init"></script>
 
     </body>
     

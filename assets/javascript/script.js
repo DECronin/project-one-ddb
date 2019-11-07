@@ -1,9 +1,16 @@
 $(document).ready(function() {
 
-
     $('.modal').modal();
 
     let list = JSON.parse(localStorage.getItem("ingredientlist"));
+
+    const gliderSearch = { 
+        type: 'carousel',
+        perView: 1,
+        fucusAt: 'center',
+        gap: '80px',
+        
+    };
 
     $('.dropdown-trigger').dropdown();
     $('select').formSelect();
@@ -58,16 +65,15 @@ $(document).ready(function() {
             search += `,${ing6}`
         }
 
+        let apiKey = 'd34f094ff89a48a5935a35df751099ae'
 
         list = [];
         localStorage.setItem("ingredientlist", JSON.stringify(list));
         $('.list-ingredients').empty();
         $('.list-input').css('display', 'block')
 
-        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=6249e69ea0314b028cff85490334f327&ingredients=${search}&ranking=1&limitLicense=true&number=6`
+        let foodURL = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${search}&ranking=1&limitLicense=true&number=6`
         
-        console.log(foodURL)
-
         $.ajax({
             url: foodURL,
             method: "GET"
@@ -91,13 +97,16 @@ $(document).ready(function() {
                     ingredients,
                     recipeId: food.id,
                     recipe: [],
-                    summary: '',
+                    cal: '',
+                    carbs: '',
+                    fat: '',
+                    protein: '',
 
                 }
 
                 recipeId = foodObject.recipeId
 
-                let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=6249e69ea0314b028cff85490334f327`
+                let recipeURL = `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${apiKey}`
 
                 $.ajax({
                     url: recipeURL,
@@ -105,29 +114,67 @@ $(document).ready(function() {
                 }).then(function(response) {
                     foodObject.recipe = response[0].steps
 
-                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=6249e69ea0314b028cff85490334f327`
+                    let summaryURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=${apiKey}`
 
                     $.ajax({
                         url: summaryURL,
                         method: "GET"
                     }).then(function(response) {
-                        foodObject.summary = response
-                        console.log(foodObject)
+                        foodObject.cal = response.calories
+                        foodObject.carbs = response.carbs
+                        foodObject.fat = response.fat
+                        foodObject.protein = response.protein
+
+                        let item = $('<li class="glide__slide display-recipe-list">');
+                        let title = $('<h4>');
+                        title.text(foodObject.title);
+
+                        let image = $(`<img alt='picture of ${foodObject.title}' />`)
+                        image.attr('src', foodObject.image)
+                        image.addClass('recipe-image u-float-right')
+
+                        let formatText1 = $('<h5>')
+                        formatText1.text('Ingredients:')
+
+
+                        let ingList = $('<ul>')
+                        ingList.addClass('ingredient-list')
+                        for(let i = 0; i < foodObject.ingredients.length; i++) {
+                            let newIng = $('<li>')
+                            newIng.text(foodObject.ingredients[i])
+                            ingList.append(newIng)
+                        }
+
+                        let formatText2 = $('<h5>')
+                        formatText2.text('Recipe:')
+
+                        let recipeList = $('<ol>')
+                        recipeList.addClass('recipe-list')
+                        for(let j = 0; j < foodObject.recipe.length; j++) {
+                            let newRec = $('<li>')
+                            newRec.text(foodObject.recipe[j].step)
+                            recipeList.append(newRec)
+                        }
+
+                        let footer = $('<p>')
+                        footer.addClass('food-stats')
+                        footer.text(`Cal: ${foodObject.cal}       Carbs: ${foodObject.carbs}       Fat: ${foodObject.fat}       Protein: ${foodObject.protein}`)
+
+                        item.append(title, image, formatText1, ingList, formatText2, recipeList, footer)
+                        $('.recipe-results').append(item)
+
+                        new Glide('.glide', gliderSearch).mount();
 
                     })
 
                 })
-
-                
-
-                //put info into a div;
 
             }
 
         })
 
     })
-    
+
     function renderList(){
         $('.list-ingredients').empty();
         for (let i = 0; i < list.length; i++) {
@@ -174,5 +221,17 @@ $(document).ready(function() {
     }
 
     renderList();
+
+    $('.contact-links').hover(function () {
+        $('.creator-text').css('display', 'block')
+    }, function () {
+        $('.creator-text').css('display', 'none')
+    })
+
+    $('.scroll').on('click', function () {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#display").offset().top
+        }, 1500);
+    })
    
-})
+});
