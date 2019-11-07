@@ -65,7 +65,7 @@ label,
         url('../images/cooking-1.jpg');
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(95vh - 13rem), 0% 100%);
 
 }
 .display-vid-list{
@@ -187,9 +187,9 @@ h4 {
     content: '';
     clear: both;
     background-color: rgb(214, 212, 212, .5);
-    height: 50vh;
-    margin-top: -24vh;
-    margin-bottom: -24vh;
+    height: 36rem;
+    margin-top: -18rem;
+    margin-bottom: -18rem;
 
 }
 .display {
@@ -202,9 +202,10 @@ h4 {
         url('../images/cooking-2.jpg');
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 13rem, 100% 0%, 100% 100%, 0% 100%);
     text-align: center;
     padding-top: 13rem;
+
 }
 
 .display-recipe-results {
