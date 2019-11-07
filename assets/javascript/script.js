@@ -124,8 +124,6 @@ $(document).ready(function() {
                         foodObject.carbs = response.carbs
                         foodObject.fat = response.fat
                         foodObject.protein = response.protein
-                        
-                        console.log(foodObject.recipe)
 
                         let item = $('<li class="glide__slide display-recipe-list">');
                         let title = $('<h4>');

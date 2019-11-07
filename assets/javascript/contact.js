@@ -41,7 +41,3 @@ $('#send-comment').on('click', function(){
         sendComment();
     }
 });
-//database.ref().on('child_added', function (snapshot) {
-    //console.log('snapshot' + JSON.stringify(snapshot));
-    //send emails
-//});
