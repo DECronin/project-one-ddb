@@ -124,8 +124,6 @@ $(document).ready(function() {
                         foodObject.carbs = response.carbs
                         foodObject.fat = response.fat
                         foodObject.protein = response.protein
-                        
-                        console.log(foodObject.recipe)
 
                         let item = $('<li class="glide__slide display-recipe-list">');
                         let title = $('<h4>');
@@ -242,6 +240,12 @@ $(document).ready(function() {
         $('.creator-text').css('display', 'block')
     }, function () {
         $('.creator-text').css('display', 'none')
+    })
+
+    $('.scroll').on('click', function () {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#display").offset().top
+        }, 1500);
     })
    
 });
