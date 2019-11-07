@@ -9,16 +9,23 @@ function validate() {
     if (user == "" ) {
         $('#empty-contact').append('* Please provide a valid Name.');
         $('#username-input').addClass('invalid');
-    } if (email == "" || !email.includes('@') || !email.includes('.')) {
+    } 
+
+    if (email == "" || !email.includes('@') || !email.includes('.')) {
         $('#empty-contact').append('<br>* Please provide a valid Email Address.');
         $('#email-input').addClass('invalid');
-    } if (comment == "" ) {
+    } 
+
+    
+    if (comment == "" ) {
         $('#empty-contact').append('<br>* Please provide a Comment.');
         $('#comment-input').addClass('invalid');
     }
- }
 
- function sendComment(){
+    
+}
+
+function sendComment(){
     database.ref().push({
         name: user,
         email: email,
@@ -27,7 +34,7 @@ function validate() {
     $('#username-input').val('');
     $('#email-input').val('');
     $('#comment-input').val('');
- }
+}
 
 $('#send-comment').on('click', function(){
     event.preventDefault();
