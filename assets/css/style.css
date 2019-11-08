@@ -16,8 +16,10 @@ body {
     width: 80vw;
     margin: 1.5rem auto;
     border: 3px black solid;
-    background-color: rgba(54, 88, 190, 0.8);
+    background-color: rgba(124, 40, 145, 0.7);
+    
 }
+
 .display-results{
     padding: 20px;
     margin: 10px;
@@ -60,8 +62,8 @@ label,
     height: 95vh;
     background-image: linear-gradient(
         to right bottom,
-        rgba(143, 10, 177, 0.65),
-        rgba(43, 243, 250, 0.65)),
+        rgba(249, 224, 0, 0.65),
+        rgba(1, 164, 205, .65)),
         url('../images/cooking-1.jpg');
     background-size: cover;
     background-position: center;
@@ -73,18 +75,19 @@ label,
     min-height: 95vh;
     background-image: linear-gradient(
         to right bottom,
-        rgba(43, 243, 250, 0.65),
-        rgba(143, 10, 177, 0.65)),
+        rgba(1, 164, 205, .65),
+        rgba(249, 224, 0, 0.65)),
         url('../images/cooking-2.jpg');
     background-size: cover;
     background-position: center;
     clip-path: polygon(0% 13rem, 100% 0%, 100% 100%, 0% 100%);
     text-align: center;
     padding-top: 13rem;
+    overflow: hidden;
 
 }
 .display-vid-list{
-    background-color: hsla(0, 0%, 96%, 0.45);
+    background-color: rgba(124, 40, 145, 0.7);
     padding: 20px;
     border: solid 3px hsla(0, 0%, 0%, 0.5);
     object-fit: cover;
@@ -216,7 +219,7 @@ h4 {
     
 }
 .display-recipe-list {
-    background-color: rgba(148, 143, 199, 0.8);
+    background-color: rgba(124, 40, 145, 0.7);
     font-size: 1.3rem;
     border-radius: 5px;
     padding: 1rem 2rem;
