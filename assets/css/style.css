@@ -16,10 +16,8 @@ body {
     width: 80vw;
     margin: 1.5rem auto;
     border: 3px black solid;
-    background-color: rgba(124, 40, 145, 0.7);
-    
+    background-color: rgba(124, 40, 145, 0.7);   
 }
-
 .display-results{
     padding: 20px;
     margin: 10px;
@@ -37,7 +35,6 @@ button{
     padding: 5px;
     background-color: white;
     margin: 5px 5px 5px 0;
-
 }
 button:hover {
     color: white;
@@ -68,7 +65,6 @@ label,
     background-size: cover;
     background-position: center;
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(95vh - 13rem), 0% 100%);
-
 }
 .display {
     position: relative;
@@ -84,7 +80,6 @@ label,
     text-align: center;
     padding-top: 13rem;
     overflow: hidden;
-
 }
 .display-vid-list{
     background-color: rgba(124, 40, 145, 0.7);
@@ -99,12 +94,10 @@ label,
     left: 30px;
     background-color: black;
     border-radius: 50%;
-
 }
 .logo {
     height: 70px;
     filter: invert(100%);
-
 }
 .name-div {
     position: absolute;
@@ -120,7 +113,6 @@ label,
     display: block;
     text-align: center;
     animation: moveDownLeft 2s;
-
 }
 .name-sub {
     display: block;
@@ -128,8 +120,7 @@ label,
     font-size: 20px;
     font-weight: 400;
     text-align: center;
-    animation: moveDownRight 2s;
-    
+    animation: moveDownRight 2s;   
 }
 h4 {
     text-shadow: 1px 1px 1px white;
@@ -145,7 +136,6 @@ h4 {
         transform: translate(0,0);
     }
 }
-
 @keyframes moveDownRight {
     0%{
         opacity: 0;
@@ -171,17 +161,14 @@ h4 {
     color: inherit;
     border: none;
     box-shadow: none;
-
 }
 .nav-items {
     float: right;
     margin-right: 20px;
     text-shadow: 1px 1px 1px black;
-
 }
 .name-line {
     margin-bottom: 80px;
-
 }
 #modal-button {
     position: relative;
@@ -194,12 +181,10 @@ h4 {
     font-size: 20px;
     text-shadow: 1px 1px 1px gray;
     animation: moveUpBottom 2s;
-
 }
 #modal-button:hover {
     background-color: white;
     color: black;
-
 }
 .seperator {
     content: '';
@@ -208,15 +193,14 @@ h4 {
     height: 36rem;
     margin-top: -18rem;
     margin-bottom: -18rem;
-
 }
-
-
+.video-title{
+    font-size: 1.15rem;
+}
 .display-recipe-results {
     width: 90%;
     margin: 0 auto;
     text-align: left;
-    
 }
 .display-recipe-list {
     background-color: rgba(124, 40, 145, 0.7);
@@ -235,26 +219,21 @@ h4 {
 .u-float-right {
     float: right;
     height: 200px;
-
 }
 .food-stats {
     margin-top: 10px;
 }
-
 .footer {
     font-size: 1rem;
     color: white;
     text-shadow: 1px 1px 2px rgb(0, 0, 0, .5);
     background-color: rgb(85, 85, 85);
     margin-top: -1px;
-    font-weight: normal;
-    
+    font-weight: normal;   
 }
-
 .names {
     margin: .5rem;
 }
-
 .footer-nav {
     width: 20%;
     text-align: center;
@@ -263,21 +242,16 @@ h4 {
     margin: auto;
     position: relative;
     top: -2rem;
-
 }
-
 .footer-nav__header {
     padding: 5px;
     text-decoration: underline;
 
 }
-
 .footer-nav__links {
     display: block;
     padding: 5px;
-
 }
-
 .footer-nav__links:link,
 .footer-nav__links:visited,
 .footer-nav__links:active {
@@ -287,20 +261,16 @@ h4 {
     color: black;
     text-shadow: 2px 2px 2px white;
 }
-
 .contact-links {
     width: 70%;
     text-align: center;
     display: inline-block;
     margin-top: 1rem;
     position: relative;
-
 }
-
 .socialLink {
     margin: .5rem;
 }
-
 .creator-text {
     display: none;
     position: absolute;
@@ -308,10 +278,7 @@ h4 {
     right: 25%;
     text-align: center;
     font-size: 4rem;
-
-
     background-image: linear-gradient(to right bottom, rgb(53, 255, 35), rgb(103, 162, 252));
     -webkit-background-clip: text;
     color: transparent;
-
 }
