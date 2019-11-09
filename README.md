@@ -49,9 +49,9 @@ We want users to have that resource to explore or draw inspiration for their mea
 * Spelling Checker on Input!
 * Free version versus Subscription (E-Kitchen)
   * Kitchen Inventory 
-  * Build Meal Plan
-  * Categories/Styles
-  * Lunch / Snack /Ect
+  * Build Meal Plan(s)
+  * Categories / Styles
+  * Lunch / Snack / Breakfast / Dinner / Ect
 
 ### Resourses:
 * HTML
