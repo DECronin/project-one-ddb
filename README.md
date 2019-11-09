@@ -28,5 +28,43 @@ We want users to have that resource to explore or draw inspiration for their mea
 ##### Desktop:
 
 ### Future Development:
+* Favorites & Storage(s)
+* Ingredients to Ignore
+* Health Restrictions
+* Account(s) Login / Personal Account(s)
+  * Preferences
+  * Inventory
+  * Shopping List
+* About Page / FAQs
+* More Reliable API Key / Account Subscription
+* Send Grid / Send Comments
+* Recommendation Buttons
+* Google Maps API
+* Potential Store Extension(s)
+  * Link or form to local Grocery Stores for pickup or delivery
+* Evolve Theme over time
+* Convert CSS with SASS
+* More Compatible Responsiveness - Features
+* ADs / Partnership(s)
+* Spelling Checker on Input!
+* Free version versus Subscription (E-Kitchen)
+  * Kitchen Inventory 
+  * Build Meal Plan(s)
+  * Categories / Styles
+  * Lunch / Snack / Breakfast / Dinner / Ect
 
 ### Resourses:
+* HTML
+* CSS
+* JavaScript
+* [jQuery](https://api.jquery.com/)
+* [Materialize](https://materializecss.com/)
+* [Glide.js](https://glidejs.com/)
+* [Firebase](https://firebase.google.com/)
+* [Youtube Data API](https://developers.google.com/youtube/v3)
+* [Spoonacular API](https://spoonacular.com/)
+* Images:
+ * [Icon](https://www.pinclipart.com/pindetail/biRwJw_cook-freeze-cool-main-dishes-easy-fun-comfort/)
+ * [Background Tile](https://www.pinterest.com/pin/571605377680749375/?autologin=true)
+ * [Header](https://www.sciencenewsforstudents.org/article/studies-show-how-homes-can-pollute-indoor-air)
+ * [Body](https://www.nbcnews.com/better/lifestyle/become-better-cook-avoiding-these-12-common-mistakes-ncna1064211)

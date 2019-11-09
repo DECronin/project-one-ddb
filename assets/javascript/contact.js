@@ -1,6 +1,6 @@
-var user;
-var email;
-var comment;
+var user = '';
+var email = '';
+var comment = '';
 function validate() {
     $('#empty-contact').empty();
     if (user == "" ) {

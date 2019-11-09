@@ -229,9 +229,9 @@ $(document).ready(function() {
     })
 
     $('.scroll').on('click', function () {
-        $([document.documentElement, document.body]).animate({
+        setTimeout($([document.documentElement, document.body]).animate({
             scrollTop: $("#display").offset().top
-        }, 1500);
+        }, 1500), 500)
     })
    
 });
