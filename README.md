@@ -63,3 +63,8 @@ We want users to have that resource to explore or draw inspiration for their mea
 * [Firebase](https://firebase.google.com/)
 * [Youtube Data API](https://developers.google.com/youtube/v3)
 * [Spoonacular API](https://spoonacular.com/)
+* Images:
+ * [Icon](https://www.pinclipart.com/pindetail/biRwJw_cook-freeze-cool-main-dishes-easy-fun-comfort/)
+ * [Background Tile](https://www.pinterest.com/pin/571605377680749375/?autologin=true)
+ * [Header](https://www.sciencenewsforstudents.org/article/studies-show-how-homes-can-pollute-indoor-air)
+ * [Body](https://www.nbcnews.com/better/lifestyle/become-better-cook-avoiding-these-12-common-mistakes-ncna1064211)
