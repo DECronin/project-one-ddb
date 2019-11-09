@@ -41,7 +41,7 @@ We want users to have that resource to explore or draw inspiration for their mea
 * Recommendation Buttons
 * Google Maps API
 * Potential Store Extension(s)
-  * Link or form to local (Google-Maps) Grocery Stores for pickup or delivery
+  * Link or form to local Grocery Stores for pickup or delivery
 * Evolve Theme over time
 * Convert CSS with SASS
 * More Compatible Responsiveness - Features
