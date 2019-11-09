@@ -22,36 +22,45 @@ We want users to have that resource to explore or draw inspiration for their mea
 ### Current Display(s):
 
 ##### Phone:
+(Coming Soon)
 
 ##### Tablet:
+(Coming Soon)
 
 ##### Desktop:
+![top](./assets/external-files/home-top.jpg)
+![modal-home](./assets/external-files/home-input.jpg)
+![home-body](./assets/external-files/home-recipe.jpg)
+![modal-vid](./assets/external-files/video-input.jpg)
+![vid-body](./assets/external-files/video-body.jpg)
+![contact](./assets/external-files/contact-body.jpg)
+![footer](./assets/external-files/footer.jpg)
 
 ### Future Development:
 * Favorites & Storage(s)
 * Ingredients to Ignore
 * Health Restrictions
 * Account(s) Login / Personal Account(s)
-  * Preferences
-  * Inventory
-  * Shopping List
+  - Preferences
+  - Inventory
+  - Shopping List
 * About Page / FAQs
 * More Reliable API Key / Account Subscription
 * Send Grid / Send Comments
 * Recommendation Buttons
 * Google Maps API
 * Potential Store Extension(s)
-  * Link or form to local Grocery Stores for pickup or delivery
+  - Link or form to local Grocery Stores for pickup or delivery
 * Evolve Theme over time
 * Convert CSS with SASS
 * More Compatible Responsiveness - Features
 * ADs / Partnership(s)
 * Spelling Checker on Input!
 * Free version versus Subscription (E-Kitchen)
-  * Kitchen Inventory 
-  * Build Meal Plan(s)
-  * Categories / Styles
-  * Lunch / Snack / Breakfast / Dinner / Ect
+  - Kitchen Inventory 
+  - Build Meal Plan(s)
+  - Categories / Styles
+  - Lunch / Snack / Breakfast / Dinner / Ect
 
 ### Resourses:
 * HTML
