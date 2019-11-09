@@ -69,7 +69,7 @@ We want users to have that resource to explore or draw inspiration for their mea
 * Free version versus Subscription (E-Kitchen)
   - Kitchen Inventory 
   - Build Meal Plan(s)
-  - Categories / Styles
+  - Categories / Styl
   - Lunch / Snack / Breakfast / Dinner / Ect
 
 ### Resourses:
