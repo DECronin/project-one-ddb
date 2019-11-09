@@ -28,5 +28,38 @@ We want users to have that resource to explore or draw inspiration for their mea
 ##### Desktop:
 
 ### Future Development:
+* Favorites & Storage(s)
+* Ingredients to Ignore
+* Health Restrictions
+* Account(s) Login / Personal Account(s)
+  * Preferences
+  * Inventory
+  * Shopping List
+* About Page / FAQs
+* More Reliable API Key / Account Subscription
+* Send Grid / Send Comments
+* Recommendation Buttons
+* Google Maps API
+* Potential Store Extension(s)
+  * Link or form to local (Google-Maps) Grocery Stores for pickup or delivery
+* Evolve Theme over time
+* Convert CSS with SASS
+* More Compatible Responsiveness - Features
+* ADs / Partnership(s)
+* Spelling Checker on Input!
+* Free version versus Subscription (E-Kitchen)
+  * Kitchen Inventory 
+  * Build Meal Plan
+  * Categories/Styles
+  * Lunch / Snack /Ect
 
 ### Resourses:
+* HTML
+* CSS
+* JavaScript
+* [jQuery](https://api.jquery.com/)
+* [Materialize](https://materializecss.com/)
+* [Glide.js](https://glidejs.com/)
+* [Firebase](https://firebase.google.com/)
+* [Youtube Data API](https://developers.google.com/youtube/v3)
+* [Spoonacular API](https://spoonacular.com/)
