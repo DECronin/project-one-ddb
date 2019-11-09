@@ -51,7 +51,7 @@ We want users to have that resource to explore or draw inspiration for their mea
 * Ingredients to Ignore
 * Health Restrictions
 * Account(s) Login / Personal Account(s)
-  - Preferences
+  - Preferences 
   - Inventory
   - Shopping List
 * About Page / FAQs
