@@ -21,8 +21,18 @@ We want users to have that resource to explore or draw inspiration for their mea
 
 ### Current Display(s):
 
-##### Phone:
-(Coming Soon)
+##### Phone: 
+(Alcatel 7)
+![home](./assets/external-files/mr-home.png)
+![home-input](./assets/external-files/mr-home-input.png)
+![home-body1](./assets/external-files/mr-home-body1.png)
+![home-body2](./assets/external-files/mr-home-body2.png)
+![vid-input](./assets/external-files/mr-vid-input.png)
+![vid-body1](./assets/external-files/mr-vid-body1.png)
+![vid-body2](./assets/external-files/mr-vid-body2.png)
+![comment1](./assets/external-files/mr-comments1.png)
+![comment2](./assets/external-files/mr-comments2.png)
+![footer](./assets/external-files/mr-footer.png)
 
 ##### Tablet:
 (Coming Soon)
