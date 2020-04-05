@@ -1,5 +1,5 @@
 # [Empty Kitchen](https://decronin.github.io/project-one-ddb/)
-#### By: [Dana Cronin](https://decronin.github.io/) & [David McCulloch](#)
+#### By: [Dana Cronin](https://decronin.herokuapp.com/) & [David McCulloch](https://dmcculloch-coder.github.io/portfolio/)
 
 ### Concept:
 On this Page or App one is able to Find Recipes relevant to Ingredients input (stackable based on contents of pantry), Search relevant videos and tutorials with popular chefs or categories and Easily Navigate through these options.
